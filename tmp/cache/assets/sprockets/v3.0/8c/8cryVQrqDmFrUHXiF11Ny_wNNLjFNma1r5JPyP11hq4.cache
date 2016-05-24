@@ -1,0 +1,13 @@
+I"þ(function() {
+  jQuery.fn.addPhoneMasks = function() {
+    return $('input[id*="phone"]').each(function() {
+      return $(this).mask("999-999-9999?");
+    });
+  };
+
+  jQuery(function() {
+    return $('div#phones').addPhoneMasks();
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,25 @@
+{:uriI"çfile://app/assets/css/Semantic-UI-1.0/composer.json?type=application/json&id=fb075789979aa449ce5acd805ff8ab8eea9351f90eb53ecc737742a0832b3082:ET:load_pathI"app/assets/css;T:filenameI"1app/assets/css/Semantic-UI-1.0/composer.json;T:	nameI"Semantic-UI-1.0/composer;T:logical_pathI""Semantic-UI-1.0/composer.json;T:content_typeI"application/json;T:sourceI"‘{
+  "name": "semantic/ui",
+  "version"     : "1.0.0",
+  "description" : "Semantic empowers designers and developers by creating a shared vocabulary for UI.",
+  "homepage"    : "http://www.semantic-ui.com",
+  "authors": [
+    {
+      "name" : "Jack Lukic",
+      "email": "jacklukic@gmail.com",
+      "web"  : "http://www.jacklukic.com",
+      "role" : "Creator"
+    }
+  ],
+  "keywords": [
+    "semantic",
+    "ui",
+    "css",
+    "framework"
+  ],
+  "license" : "MIT"
+};T:metadata{	:dependencieso:Set:
+@hash{
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"?file-digest://app/assets/css/Semantic-UI-1.0/composer.json;TT:charsetI"
+utf-8;F:digest"%â%”ç¥ÖÖ”mıBPÂöà(BHQõò‚ÒÃ∑4:lengthi‘:dependencies_digest"%ÿ/bÄfNÒ¥Ê[7≠DÁ“»»¬Ä	$ΩSætŒ:idI"Efb075789979aa449ce5acd805ff8ab8eea9351f90eb53ecc737742a0832b3082;F:
+mtimel+üırT

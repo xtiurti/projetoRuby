@@ -1,0 +1,33 @@
+{:uriI"Šfile://app/assets/css/Semantic-UI-1.0/bower.json?type=application/json&id=295432d986f549b1f96252bc0aff50af9ef7e369c56b560edd286b7ed02721fd:ET:load_pathI"app/assets/css;T:filenameI".app/assets/css/Semantic-UI-1.0/bower.json;T:	nameI"Semantic-UI-1.0/bower;T:logical_pathI"Semantic-UI-1.0/bower.json;T:content_typeI"application/json;T:sourceI"-{
+  "name"        : "semantic",
+  "description" : "Semantic empowers designers and developers by creating a shared vocabulary for UI.",
+  "homepage"    : "http://www.semantic-ui.com",
+  "author": {
+    "name" : "Jack Lukic",
+    "web"  : "http://www.jacklukic.com"
+  },
+  "dependencies": {
+    "jquery"      : ">=1.8"
+  },
+  "main": [
+    "dist/semantic.css",
+    "dist/semantic.js"
+  ],
+  "keywords": [
+    "semantic",
+    "ui",
+    "css3",
+    "framework"
+  ],
+  "license" : [
+    "http://semantic-ui.mit-license.org/"
+  ],
+  "ignore": [
+    "test"
+  ]
+}
+;T:metadata{	:dependencieso:Set:
+@hash{
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"<file-digest://app/assets/css/Semantic-UI-1.0/bower.json;TT:charsetI"
+utf-8;F:digest"%_S?-¯ŽÉ£„	]•ºßè{ö+ü“\ÆGpl‰{(X Ø:lengthi-:dependencies_digest"%p-†]˜Ðj§Iò¦5 ø­ÑÜ8@I*¤öFÆã:idI"E295432d986f549b1f96252bc0aff50af9ef7e369c56b560edd286b7ed02721fd;F:
+mtimel+ŸõrT
