@@ -1,50 +1,0 @@
-{:uriI"”file://app/assets/css/Semantic-UI-1.0/test/fixtures/checkbox.html?type=text/html&id=6ad0c86578ca26be7f1fc50a1e1877d5584e353c201579a368ca65e1be476dbb:ET:load_pathI"app/assets/css;T:filenameI"?app/assets/css/Semantic-UI-1.0/test/fixtures/checkbox.html;T:	nameI"+Semantic-UI-1.0/test/fixtures/checkbox;T:logical_pathI"0Semantic-UI-1.0/test/fixtures/checkbox.html;T:content_typeI"text/html;T:sourceI"Ã<div class="ui form">
-  <div class="grouped inline fields">
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input type="radio" name="fruit" checked="checked" />
-        <label>Apples</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input type="radio" name="fruit" />
-        <label>Oranges</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input type="radio" name="fruit" />
-        <label>Pears</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input type="radio" name="fruit" />
-        <label>Grapefruit</label>
-      </div>
-    </div>
-  </div>
-  <div class="field">
-    <div class="ui checkbox">
-      <input type="checkbox">
-      <label>Poodle</label>
-    </div>
-  </div>
-  <div class="field">
-    <div class="ui toggle checkbox">
-      <input type="checkbox" name="pet" />
-      <label>Allow other people to pet my dog</label>
-    </div>
-  </div>
-  <div class="field">
-    <div class="ui slider checkbox">
-      <input type="checkbox" name="pet" />
-      <label>Allow other people to pet my dog</label>
-    </div>
-  </div>
-</div>;T:metadata{	:dependencieso:Set:
-@hash{
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Mfile-digest://app/assets/css/Semantic-UI-1.0/test/fixtures/checkbox.html;TT:charsetI"
-utf-8;F:digest"%z	¼2)¹ÒÒÈ»jýS13ŽmØÕ¬‡Dô*KœW©^:lengthiÃ:dependencies_digest"%?põ4(yžô{´e«}ôz~®:_Ëü…ŠÀ-ðö:idI"E6ad0c86578ca26be7f1fc50a1e1877d5584e353c201579a368ca65e1be476dbb;F:
-mtimel+ŸõrT

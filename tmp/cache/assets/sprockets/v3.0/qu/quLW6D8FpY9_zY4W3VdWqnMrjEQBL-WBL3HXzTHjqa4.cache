@@ -1,63 +1,0 @@
-{:uriI"Œfile://app/assets/css/Semantic-UI-1.0/package.json?type=application/json&id=f57e1f98a603538adcf58ef0445c061504c9e03f9df8777807655d9f0a2da769:ET:load_pathI"app/assets/css;T:filenameI"0app/assets/css/Semantic-UI-1.0/package.json;T:	nameI"Semantic-UI-1.0/package;T:logical_pathI"!Semantic-UI-1.0/package.json;T:content_typeI"application/json;T:sourceI"ô{
-  "name": "semantic",
-  "version": "1.0.0",
-  "title": "Semantic UI",
-  "description": "Semantic empowers designers and developers by creating a shared vocabulary for UI.",
-  "homepage": "http://www.semantic-ui.com",
-  "author": "Jack Lukic <jack@semantic-ui.com>",
-  "license": "MIT",
-  "scripts": {
-    "test": "gulp test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/Semantic-Org/Semantic-UI.git#1.0"
-  },
-  "bugs": {
-    "url": "https://github.com/Semantic-Org/Semantic-UI/issues"
-  },
-  "dependencies": {
-    "jquery": "x.x.x"
-  },
-  "devDependencies": {
-    "better-console": "x.x.x",
-    "del": "x.x.x",
-    "extend": "x.x.x",
-    "github": "x.x.x",
-    "gulp": "x.x.x",
-    "gulp-autoprefixer": "x.x.x",
-    "gulp-batch": "x.x.x",
-    "gulp-clone": "x.x.x",
-    "gulp-concat": "x.x.x",
-    "gulp-concat-css": "x.x.x",
-    "gulp-copy": "x.x.x",
-    "gulp-csscomb": "x.x.x",
-    "gulp-debug": "x.x.x",
-    "gulp-flatten": "x.x.x",
-    "gulp-git": "x.x.x",
-    "gulp-header": "x.x.x",
-    "gulp-help": "x.x.x",
-    "gulp-json-editor": "x.x.x",
-    "gulp-karma": "x.x.x",
-    "gulp-less": "x.x.x",
-    "gulp-minify-css": "x.x.x",
-    "gulp-notify": "x.x.x",
-    "gulp-plumber": "x.x.x",
-    "gulp-print": "x.x.x",
-    "gulp-prompt": "x.x.x",
-    "gulp-rename": "x.x.x",
-    "gulp-replace": "x.x.x",
-    "gulp-sourcemaps": "x.x.x",
-    "gulp-uglify": "x.x.x",
-    "gulp-util": "x.x.x",
-    "gulp-watch": "x.x.x",
-    "rtlcss": "x.x.x",
-    "run-sequence": "x.x.x",
-    "wrench": "x.x.x"
-  }
-}
-;T:metadata{	:dependencieso:Set:
-@hash{
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI">file-digest://app/assets/css/Semantic-UI-1.0/package.json;TT:charsetI"
-utf-8;F:digest"%#ßo3Æ%³aí†¥z´Š‡¹(–õw…ŸŠ-‰:lengthiô:dependencies_digest"%Î„ØÔŸ©dS'¼¿1[ßhåıŸÎÁ{Ûôğsô1âÈş:idI"Ef57e1f98a603538adcf58ef0445c061504c9e03f9df8777807655d9f0a2da769;F:
-mtimel+ŸõrT

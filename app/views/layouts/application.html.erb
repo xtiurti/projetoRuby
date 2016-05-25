@@ -2,25 +2,13 @@
 <html>
 <head>
   <title>Web514</title>
-
-  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  
-
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-	<div class="fundo">
-		<%= yield %>
-	</div>
+<%= yield %>
 
-<!-- <div class="rodape">
-	<div class="ui pointing inverted menu">
-  <h2><i class="terminal inverted icon"></i></h2>
-
-</div>
- -->
-</div>
 </body>
 </html>

@@ -1,13 +1,0 @@
-{:uriI"îfile://app/assets/css/Semantic-UI-1.0/test/fixtures/dropdown.html?type=text/html&id=7982ad99bd33f00999e684b3bfb6aabd6ff30651085b56f350f02fedbc23ee26:ET:load_pathI"app/assets/css;T:filenameI"?app/assets/css/Semantic-UI-1.0/test/fixtures/dropdown.html;T:	nameI"+Semantic-UI-1.0/test/fixtures/dropdown;T:logical_pathI"0Semantic-UI-1.0/test/fixtures/dropdown.html;T:content_typeI"text/html;T:sourceI"!<div class="ui selection dropdown">
-  <input type="hidden" name="gender">
-  <i class="dropdown icon"></i>
-  <div class="default text">Gender</div>
-  <div class="menu">
-    <div class="item" data-value="male">Male</div>
-    <div class="item" data-value="female">Female</div>
-  </div>
-</div>;T:metadata{	:dependencieso:Set:
-@hash{
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Mfile-digest://app/assets/css/Semantic-UI-1.0/test/fixtures/dropdown.html;TT:charsetI"
-utf-8;F:digest"%Yù7∆M^·U1†Ù>Â⁄Ímçü6ßÀö’z¯Y≠!„:lengthi!:dependencies_digest"%ñz/N“UGçeWJ¨»J:é4f/y≠PW¨MΩ:idI"E7982ad99bd33f00999e684b3bfb6aabd6ff30651085b56f350f02fedbc23ee26;F:
-mtimel+üırT

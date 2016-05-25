@@ -1,23 +1,0 @@
-{:uriI"•file://app/assets/css/Semantic-UI-1.0/tasks/admin/docs.json?type=application/json&id=cbb6c428470e04031f63ef08805a60e4aa85efa446e214d6ac84817c6006354c:ET:load_pathI"app/assets/css;T:filenameI"9app/assets/css/Semantic-UI-1.0/tasks/admin/docs.json;T:	nameI"%Semantic-UI-1.0/tasks/admin/docs;T:logical_pathI"*Semantic-UI-1.0/tasks/admin/docs.json;T:content_typeI"application/json;T:sourceI"Ù{
-  "base": "",
-  "paths": {
-    "source": {
-      "config": "src/theme.config",
-      "definitions": "src/definitions/",
-      "site": "src/site/",
-      "themes": "src/themes/"
-    },
-    "output": {
-      "less":     "../docs/out/src/",
-      "packaged": "../docs/out/dist/",
-      "uncompressed": "../docs/out/dist/components/",
-      "compressed": "../docs/out/dist/components/",
-      "themes": "../docs/out/dist/themes/"
-    },
-    "clean": "../docs/out/dist/"
-  }
-};T:metadata{	:dependencieso:Set:
-@hash{
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Gfile-digest://app/assets/css/Semantic-UI-1.0/tasks/admin/docs.json;TT:charsetI"
-utf-8;F:digest"%wa=¬wxUöm¥‚ ¶<ÂÀ4¾TE`–ôëÖ=8‘íf:lengthiÙ:dependencies_digest"%ÛÁ^Á‚½ÓŽç­/ *†Ò÷áð”kö&Àg7”øí:idI"Ecbb6c428470e04031f63ef08805a60e4aa85efa446e214d6ac84817c6006354c;F:
-mtimel+ŸõrT

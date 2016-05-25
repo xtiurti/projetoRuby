@@ -1,9 +1,0 @@
-I"®(function() {
-  $("[data-mask]").each(function(index, value) {
-    var element;
-    element = $(value);
-    return element.mask($(value).data('mask'));
-  });
-
-}).call(this);
-:ET
