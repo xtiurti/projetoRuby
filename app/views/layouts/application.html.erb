@@ -1,14 +1,45 @@
 <!DOCTYPE html>
+
 <html>
 <head>
   <title>Project Final</title>
+  <%= favicon_link_tag 'index.ico' %>
+  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
 </head>
+
 <body>
+	<div class="ui large menu">
+  <a class="active item">
+    Home
+  </a>
+	<%= link_to new_teaching_plan_path do %>
+		<i class="item">Messages
+	<% end %>
+  </i>
+  <div class="right menu">
+    <div class="ui dropdown item">
+      Language <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item">English</a>
+        <a class="item">Russian</a>
+        <a class="item">Spanish</a>
+      </div>
+    </div>
+    <div class="item">
+        <div class="ui primary button">Sign Up</div>
+    </div>
+  </div>
+</div>
 
-<%= yield %>
-
+	<%= yield %>
 </body>
+
 </html>

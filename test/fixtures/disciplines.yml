@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  cod: 
+  period: 1
+  matrix: 1
+  course: 
+  substantiation: 
+  goals: 
+  ement: 
+  at: 1
+  ap: 1
+  aps: 1
+  ad: MyString
+  integer: MyString
+  apcc: 1
+
+two:
+  name: 
+  cod: 
+  period: 1
+  matrix: 1
+  course: 
+  substantiation: 
+  goals: 
+  ement: 
+  at: 1
+  ap: 1
+  aps: 1
+  ad: MyString
+  integer: MyString
+  apcc: 1
