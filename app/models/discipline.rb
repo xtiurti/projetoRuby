@@ -1,2 +1,3 @@
-class Discipline < ActiveRecord::Base
+class Discipline < ActiveRecord::
+  #model discipline
 end
