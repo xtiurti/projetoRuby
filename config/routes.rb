@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-   resources :teaching_plan
-   resources :discipline
+   resources :teaching_plans
+   resources :disciplines
 
 
   # The priority is based upon order of creation: first created -> highest priority.

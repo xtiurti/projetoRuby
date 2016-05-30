@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day_month_week: MyString
+  content_classes: MyString
+  number_classes: MyString
+  references: 
+
+two:
+  day_month_week: MyString
+  content_classes: MyString
+  number_classes: MyString
+  references: 

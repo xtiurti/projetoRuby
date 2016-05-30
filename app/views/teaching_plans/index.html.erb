@@ -1,0 +1,32 @@
+<% if flash[:notice] %> 
+  <p id="notice"></p>
+<%= flash[:notice] %> </div> <% end %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+<div class="ui container">
+
+<%= link_to new_teaching_plan_path, class: 'ui btn teal button'  do %>
+  <h1><i class="plus icon"></i> Criar Plano de Ensino</h1>
+<% end %>
+
+<table class="ui celled table striped">
+  <thead>
+    <tr>
+      <th>Disciplina</th>
+      <th>Professor Responsável</th>
+      <th>Status</th>
+      <th colspan="3">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teachingPlans.each do |teachingPlan| %>
+      <tr id="teaching_plans_<%=teaching_plan.id%>">
+        <td><%= link_to 'Show', person, class: 'ui green button'%></td>
+        <td><%= link_to 'Edit', edit_teaching_plan_path(teaching_plan), class: 'ui yellow button' %></td>
+        <td><%= link_to 'Destroy', teaching_plan, method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red button' %>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>

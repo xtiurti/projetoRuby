@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  theoretical_classes: MyText
+  practical_classes: MyText
+  aps: MyText
+  activies_distance: MyText
+  apcc: MyText
+  TeachingPlan_id: 
+
+two:
+  theoretical_classes: MyText
+  practical_classes: MyText
+  aps: MyText
+  activies_distance: MyText
+  apcc: MyText
+  TeachingPlan_id: 
