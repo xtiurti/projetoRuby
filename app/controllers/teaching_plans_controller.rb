@@ -10,7 +10,7 @@ class TeachingPlansController < ApplicationController
 
   def new 
     @teaching_plan = TeachingPlan.new 
-    @disciplines = Disciplines.all 
+    @disciplines = Discipline.all 
   end
 
   def destroy
@@ -22,7 +22,8 @@ class TeachingPlansController < ApplicationController
   def update
   end
 
-private
+  private
+
   def set_teaching_plan
     @teachingPlan = TeachingPlan.find(params[:id])
   end
