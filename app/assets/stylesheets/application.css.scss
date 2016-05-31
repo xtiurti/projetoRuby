@@ -15,7 +15,7 @@
  
  */
 
- .rodape{
+.rodape{
     position: absolute;
     bottom: 0;
     width:100%;
@@ -28,21 +28,15 @@
         margin-bottom: 10px;
         width: 1000px;
 }
-.data{
-    float: left;
-    width: 100px;
-    marginright: 5px;
 
-}
-.image_status{
-	width: 10px;
+.ui.inverted.teal.menu  {
+    position: fixed;
+    z-index: 9999;
+    height: 55px;   
 }
 
-.fundo{
-	background: repeat scroll 100% 100% #F5F5F5;
-    width:100%;
-    heigth:100%;
-    position: relative;
-    overflor: hidden;
+.ui.container {
+    padding-top: 75px;
 }
+
 @import "semantic-ui";

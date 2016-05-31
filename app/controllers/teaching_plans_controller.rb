@@ -1,3 +1,4 @@
+
 class TeachingPlansController < ApplicationController
   before_action :set_teaching_plan, only: [:show, :edit, :update, :destroy]
   
@@ -10,6 +11,8 @@ class TeachingPlansController < ApplicationController
 
   def new 
     @teaching_plan = TeachingPlan.new 
+    @disciplines = Discipline.all
+
   end
 
   def destroy
@@ -21,6 +24,8 @@ class TeachingPlansController < ApplicationController
   def update
   end
 
+  private
+  
   def set_teaching_plan
     @teachingPlan = TeachingPlan.find(params[:id])
   end

@@ -1,5 +1,5 @@
 <div class="ui container">
-<%= form_for(@teaching_plan, html:{class: "ui form inverted segment"}) do |f| %>
+<%= form_for(@teaching_plan, html:{class: "ui form segment"}) do |f| %>
   <h2 class="ui dividing header">Cadastro de Plano de Ensino</h2>
   <% if @teaching_plan.errors.any? %>
     <div class="ui negative message">
@@ -14,7 +14,6 @@
       </ul>
     </div>
   <% end %>
-
 
   <div class="fields">
     <div class="twelve wide field">
@@ -31,16 +30,16 @@
     </div>
   </div>
   
-  <h3>Procedimento de Avaliação</h3>
    <div class="field">
-    <%= f.text_field :evaluation %>
+    <label>Procedimento de Avaliação</label>
+    <%= f.text_area :evaluation %>
   </div>
-  <h3>Referências</h3>
    <div class="field">
+    <label>Referências</label>
     <%= f.text_field :references %>
   </div>
-  <h3>Orientações Gerais</h3>
    <div class="field">
+    <label>Orientações Gerais</label>
     <%= f.text_field :guidelines%>
   </div>
   <%= f.submit class: 'btn ui left attached teal button' %> 
