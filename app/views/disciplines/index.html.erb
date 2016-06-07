@@ -13,16 +13,20 @@
   <thead>
     <tr>
       <th>Disciplina</th>
-      <th colspan="3">Options</th>
+      <th>Curso</th>
+      <th colspan="4">Opções</th>
     </tr>
   </thead>
   <tbody>
     <% @disciplines.each do |discipline| %>
-      <tr id="disciplines_<%=discipline.id%>">
-        <td><%= link_to 'Show', discipline, class: 'ui green button'%></td>
-        <td><%= link_to 'Edit', edit_discipline_path(discipline), class: 'ui yellow button' %></td>
-        <td><%= link_to 'Destroy', discipline, method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red button' %>
-        </tr>
+    <tr id="disciplines_<%=discipline.id%>">
+      <td><%= discipline.name %></td>
+      <td><%= discipline.course %></td>
+      <td><%= link_to 'Show', discipline, class: 'ui green button'%></td>
+      <td><%= link_to 'Edit', edit_discipline_path(discipline), class: 'ui yellow button' %></td>
+      <td><%= link_to 'Destroy', discipline, method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red button' %></td>
+      <td><%= link_to 'Gerar Plano de Ensino', discipline, method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui teal button' %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
