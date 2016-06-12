@@ -15,6 +15,21 @@
 //= require turbolinks
 //= require semantic-ui
 //= require_tree .
-$('.ui.dropdown')
-  .dropdown()
-;
+
+function remove_fields(link) {
+	$(link).prev("input[type=hidden]").val(1);
+	$(link).closest(".fields").hide();
+}
+
+function add_fields(link, association, content){
+	var new_id = new Date().getTime();
+	var regexp = new RegExp("new_" + association, "g");
+	$(link).parent().before(content.replace(regexp, new_id));
+}
+
+$(window).bind('load', function() {
+  $('.message .close')
+  .on('click', function() {
+    $(this).parent('.message').fadeOut("fast");
+  })
+;})

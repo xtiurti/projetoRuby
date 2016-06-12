@@ -81,10 +81,13 @@
 <!-- Inserindo tabela conteudo programatico -->
   <h2 class="ui dividing header">Conteúdo Programático</h2>
   <%= f.fields_for :program_contents do |builder| %>
-    <%= render "program", f: builder %>
+    <%= render "program_content_fields", f: builder %>
   <% end %>
+  <p><%= link_to_add_fields "Adicionar conteúdo", f, :program_contents %></p>
   
-  <%= f.submit class: 'btn ui left attached teal button' %> 
+  <div class="actions">
+    <%= f.submit 'Atualizar Disciplina', class: 'btn ui left attached teal button'  %> 
+  </div>
 
   </div>
 <% end %>

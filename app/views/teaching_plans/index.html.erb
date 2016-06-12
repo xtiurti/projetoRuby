@@ -5,23 +5,22 @@
 
 <div class="ui container">
 
-<%= link_to new_teaching_plan_path, class: 'ui btn teal button'  do %>
-  <h1><i class="plus icon"></i> Criar Plano de Ensino</h1>
-<% end %>
-
 <table class="ui celled table striped">
   <thead>
     <tr>
       <th>Disciplina</th>
       <th>Professor Responsável</th>
-      <th>Status</th>
-      <th colspan="3">Options</th>
+      <th>Semestre</th>
+      <th colspan="4">Options</th>
     </tr>
   </thead>
   <tbody>
-    <% @teachingPlans.each do |teachingPlan| %>
+    <% @teaching_plans.each do |teaching_plan| %>
       <tr id="teaching_plans_<%=teaching_plan.id%>">
-        <td><%= link_to 'Show', person, class: 'ui green button'%></td>
+        <td><%= teaching_plan.discipline_id %></td>
+        <td><%= teaching_plan.teacher %></td>
+        <td><%= teaching_plan.semester %></td>
+        <td><%= link_to 'Show', teaching_plan, class: 'ui green button'%></td>
         <td><%= link_to 'Edit', edit_teaching_plan_path(teaching_plan), class: 'ui yellow button' %></td>
         <td><%= link_to 'Destroy', teaching_plan, method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red button' %>
         </tr>

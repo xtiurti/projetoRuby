@@ -24,8 +24,8 @@
       <td><%= discipline.course %></td>
       <td><%= link_to 'Show', discipline, class: 'ui green button'%></td>
       <td><%= link_to 'Edit', edit_discipline_path(discipline), class: 'ui yellow button' %></td>
-      <td><%= link_to 'Destroy', discipline, method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red button' %></td>
-      <td><%= link_to 'Gerar Plano de Ensino', discipline, method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui teal button' %></td>
+      <td><%= link_to 'Destroy', discipline, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: 'ui red button' %></td>
+      <td><%= link_to 'Gerar Plano de Ensino', new_teaching_plan_path(discipline), class: 'ui teal button' %></td>
     </tr>
     <% end %>
   </tbody>

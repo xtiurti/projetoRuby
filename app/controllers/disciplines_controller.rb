@@ -7,7 +7,7 @@ class DisciplinesController < ApplicationController
 
   def new
     @discipline = Discipline.new
-    3.times {@discipline.program_contents.build}
+    3.times {@discipline.program_contents_attributes.build}
   end
 
   def show
@@ -37,13 +37,12 @@ class DisciplinesController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
     respond_to do |format|
       if @discipline.update(discipline_params)
-        format.html { redirect_to discipline_path(@discipline), notice: 'Discipline was successfully updated.' }
+        format.html { redirect_to discipline_path(@discipline), notice: 'A disciplina foi atualizada com sucesso!.' }
         format.json { head :no_content }
         format.js
       else
@@ -62,6 +61,6 @@ class DisciplinesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
 
     def discipline_params
-      params.require(:discipline).permit(:name, :cod, :period, :matrix, :course, :substantiation, :goals, :ement, :at, :ap, :aps, :ad, :apcc, :total, program_contents_attributes: [:id, :item, :ement, :content])
+      params.require(:discipline).permit(:name, :cod, :period, :matrix, :course, :substantiation, :goals, :ement, :at, :ap, :aps, :ad, :apcc, :total, program_contents_attributes: [:id, :item, :ement, :content, :_destroy])
     end
 end
