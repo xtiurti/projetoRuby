@@ -7,7 +7,6 @@ class DisciplinesController < ApplicationController
 
   def new
     @discipline = Discipline.new
-    3.times {@discipline.program_contents_attributes.build}
   end
 
   def show

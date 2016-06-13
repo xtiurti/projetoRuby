@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160606232351) do
+ActiveRecord::Schema.define(version: 20160613025325) do
 
   create_table "disciplines", force: :cascade do |t|
     t.string   "name"
@@ -46,13 +46,13 @@ ActiveRecord::Schema.define(version: 20160606232351) do
   create_table "programmings", force: :cascade do |t|
     t.string   "day_month_week"
     t.string   "content_classes"
-    t.string   "number_classes"
-    t.integer  "TeachingPlan_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "number_classes"
+    t.integer  "teaching_plan_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
-  add_index "programmings", ["TeachingPlan_id"], name: "index_programmings_on_TeachingPlan_id"
+  add_index "programmings", ["teaching_plan_id"], name: "index_programmings_on_teaching_plan_id"
 
   create_table "teaching_plans", force: :cascade do |t|
     t.string   "teacher"
@@ -74,11 +74,11 @@ ActiveRecord::Schema.define(version: 20160606232351) do
     t.text     "aps"
     t.text     "activies_distance"
     t.text     "apcc"
-    t.integer  "TeachingPlan_id"
+    t.integer  "teaching_plan_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
 
-  add_index "teaching_procedures", ["TeachingPlan_id"], name: "index_teaching_procedures_on_TeachingPlan_id"
+  add_index "teaching_procedures", ["teaching_plan_id"], name: "index_teaching_procedures_on_teaching_plan_id"
 
 end

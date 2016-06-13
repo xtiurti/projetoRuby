@@ -1,0 +1,2 @@
+module Disciplines::TeachingPlansHelper
+end

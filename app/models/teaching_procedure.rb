@@ -1,3 +1,3 @@
 class TeachingProcedure < ActiveRecord::Base
-  belongs_to :TeachingPlan
+  belongs_to :teaching_plan
 end

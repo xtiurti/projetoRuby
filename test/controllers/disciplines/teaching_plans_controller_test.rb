@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TeachingPlanControllerTest < ActionController::TestCase
+class Disciplines::TeachingPlansControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
@@ -11,8 +11,13 @@ class TeachingPlanControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get destroy" do
-    get :destroy
+  test "should get new" do
+    get :new
+    assert_response :success
+  end
+
+  test "should get create" do
+    get :create
     assert_response :success
   end
 
@@ -23,6 +28,11 @@ class TeachingPlanControllerTest < ActionController::TestCase
 
   test "should get update" do
     get :update
+    assert_response :success
+  end
+
+  test "should get destroy" do
+    get :destroy
     assert_response :success
   end
 

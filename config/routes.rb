@@ -1,8 +1,36 @@
 Rails.application.routes.draw do
 
-   resources :teaching_plans
-   resources :disciplines
+  namespace :disciplines do
+  get 'teaching_plans/index'
+  end
 
+  namespace :disciplines do
+  get 'teaching_plans/show'
+  end
+
+  namespace :disciplines do
+  get 'teaching_plans/new'
+  end
+
+  namespace :disciplines do
+  get 'teaching_plans/create'
+  end
+
+  namespace :disciplines do
+  get 'teaching_plans/edit'
+  end
+
+  namespace :disciplines do
+  get 'teaching_plans/update'
+  end
+
+  namespace :disciplines do
+  get 'teaching_plans/destroy'
+  end
+
+  resources :disciplines do
+    resources :teaching_plans, controller: 'disciplines/teaching_plans'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

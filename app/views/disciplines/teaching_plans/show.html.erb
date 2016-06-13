@@ -1,0 +1,44 @@
+<% if flash[:notice] %> 
+  <p id="notice"></p>
+<%= flash[:notice] %> </div> <% end %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+<div class="ui container">
+
+<table class="ui celled table striped">
+  <thead>
+    <tr>
+      <th>Disciplina</th>
+      <th>Professor Responsável</th>
+      <th>Semestre</th>
+      <th>Programação das Aulas</th>
+      <th>Procedimentos de Ensino</th>
+      <th colspan="4">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @teaching_plan.discipline_id %></td>
+      <td><%= @teaching_plan.teacher %></td>
+      <td><%= @teaching_plan.semester %></td>
+      <td><% @teaching_plan.programmings.each do |programming| %>
+        <ul>
+          <li>Dia/Mês/Semana:<%= programming.day_month_week %></li>
+          <li>Conteúdo:<%= programming.content_classes %></li>
+          <li>Nº Aulas:<%= programming.number_classes %></li>
+        </ul>
+        <%end%>
+      </td>
+      <td><% @teaching_plan.teaching_procedures.each do |teaching_procedure| %>
+        <ul>
+          <li>Aulas Teóricas:<%= teaching_procedure.theoretical_classes %></li>
+        </ul>
+        <%end%>
+      </td>
+      <td><%= link_to 'Edit', edit_discipline_teaching_plan_path(@discipline, @teaching_plan), class: 'ui yellow button' %></td>
+      <td><%= link_to 'Destroy', discipline_teaching_plan_path(@discipline, @teaching_plan), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red button' %>
+      </tr>
+  </tbody>
+</table>
+
+</div>

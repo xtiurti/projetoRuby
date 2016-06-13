@@ -5,7 +5,7 @@
 
 <div class="ui container">
 
-<%= link_to new_discipline_path, class: 'ui btn teal button'  do %>
+<%= link_to new_discipline_path, class: 'ui btn teal button' do %>
   <h1><i class="plus icon"></i> Criar Disciplina</h1>
 <% end %>
 
@@ -25,7 +25,7 @@
       <td><%= link_to 'Show', discipline, class: 'ui green button'%></td>
       <td><%= link_to 'Edit', edit_discipline_path(discipline), class: 'ui yellow button' %></td>
       <td><%= link_to 'Destroy', discipline, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: 'ui red button' %></td>
-      <td><%= link_to 'Gerar Plano de Ensino', new_teaching_plan_path(discipline), class: 'ui teal button' %></td>
+      <td><%= link_to 'Gerar Plano de Ensino', new_discipline_teaching_plan_path(discipline), class: 'ui teal button' %></td>
     </tr>
     <% end %>
   </tbody>

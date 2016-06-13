@@ -1,94 +1,94 @@
 <div class="ui container">
-<%= form_for(@discipline, html:{class: "ui form segment"}) do |f| %>
-  <h2 class="ui dividing header">Cadastro de Disciplina</h2>
-  <% if @discipline.errors.any? %>
-    <div class="ui negative message">
-      <i class="close icon"></i>
-      <div class="header"> 
-        <%= pluralize(@discipline.errors.count, " - Existe erro", " - Existem Erros") %> no seu formulário:
+  <%= form_for(@discipline, html:{class: "ui form segment"}) do |f| %>
+    <h2 class="ui dividing header">Cadastro de Disciplina</h2>
+    <% if @discipline.errors.any? %>
+      <div class="ui negative message">
+        <i class="close icon"></i>
+        <div class="header"> 
+          <%= pluralize(@discipline.errors.count, " - Existe erro", " - Existem Erros") %> no seu formulário:
+        </div>
+        <ul>
+        <% @discipline.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
       </div>
-      <ul>
-      <% @discipline.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% end %>
+
+    <div class="fields">
+      <div class="fourteen wide field">
+        <label>Curso</label>
+        <%= f.text_field :course %>
+      </div>
+      <div class="two wide field">
+        <label>Matriz</label>
+        <%= f.text_field :matrix %>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label>Fundamentação Legal</label>
+      <%= f.text_field :substantiation %>
+    </div>
+    
+    <div class="fields">
+      <div class="eight wide field">
+        <label>Nome</label>
+        <%= f.text_field :name %>
+      </div>
+      <div class="two wide field">
+        <label>Código</label>
+        <%= f.text_field :cod %>
+      </div>
+      <div class="one wide field">
+        <label>Período</label>
+        <%= f.text_field :period %>
+      </div>
+      <div class="one wide field">
+        <label>AT</label>
+        <%= f.text_field :at %>
+      </div>
+      <div class="one wide field">
+        <label>AP</label>
+        <%= f.text_field :ap %>
+      </div>
+      <div class="one wide field">
+        <label>APS</label>
+        <%= f.text_field :aps %>
+      </div>
+      <div class="one wide field">
+        <label>AD</label>
+        <%= f.text_field :ad %>
+      </div>
+      <div class="one wide field">
+        <label>APCC</label>
+        <%= f.text_field :apcc %>
+      </div>
+      <div class="one wide field">
+        <label>TOTAL</label>
+        <%= f.text_field :total %>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label>Objetivos</label>
+      <%= f.text_field :goals %>
+    </div>
+    <div class="field">
+      <label>Ementa</label>
+      <%= f.text_area :ement %>
+    </div>
+    <!-- Inserindo tabela conteudo programatico -->
+    <h2 class="ui dividing header">Conteúdo Programático</h2>
+    <%= f.fields_for :program_contents do |builder| %>
+      <%= render "program_content_fields", f: builder %>
+    <% end %>
+    <p><%= link_to_add_fields "Adicionar conteúdo", f, :program_contents %></p>
+    
+    <div class="actions">
+      <%= f.submit 'Atualizar Disciplina', class: 'btn ui left attached teal button'  %> 
     </div>
   <% end %>
+</div>
 
-  <div class="fields">
-    <div class="fourteen wide field">
-      <label>Curso</label>
-      <%= f.text_field :course %>
-    </div>
-    <div class="two wide field">
-      <label>Matriz</label>
-      <%= f.text_field :matrix %>
-    </div>
-  </div>
-  
-  <div class="field">
-    <label>Fundamentação Legal</label>
-    <%= f.text_field :substantiation %>
-  </div>
-  
-  <div class="fields">
-    <div class="eight wide field">
-      <label>Nome</label>
-      <%= f.text_field :name %>
-    </div>
-    <div class="two wide field">
-      <label>Código</label>
-      <%= f.text_field :cod %>
-    </div>
-    <div class="one wide field">
-      <label>Período</label>
-      <%= f.text_field :period %>
-    </div>
-    <div class="one wide field">
-      <label>AT</label>
-      <%= f.text_field :at %>
-    </div>
-    <div class="one wide field">
-      <label>AP</label>
-      <%= f.text_field :ap %>
-    </div>
-    <div class="one wide field">
-      <label>APS</label>
-      <%= f.text_field :aps %>
-    </div>
-    <div class="one wide field">
-      <label>AD</label>
-      <%= f.text_field :ad %>
-    </div>
-    <div class="one wide field">
-      <label>APCC</label>
-      <%= f.text_field :apcc %>
-    </div>
-    <div class="one wide field">
-      <label>TOTAL</label>
-      <%= f.text_field :total %>
-    </div>
-  </div>
-  
-  <div class="field">
-    <label>Objetivos</label>
-    <%= f.text_field :goals %>
-  </div>
-  <div class="field">
-    <label>Ementa</label>
-    <%= f.text_area :ement %>
-  </div>
-<!-- Inserindo tabela conteudo programatico -->
-  <h2 class="ui dividing header">Conteúdo Programático</h2>
-  <%= f.fields_for :program_contents do |builder| %>
-    <%= render "program_content_fields", f: builder %>
-  <% end %>
-  <p><%= link_to_add_fields "Adicionar conteúdo", f, :program_contents %></p>
-  
-  <div class="actions">
-    <%= f.submit 'Atualizar Disciplina', class: 'btn ui left attached teal button'  %> 
-  </div>
-
-  </div>
-<% end %>
 

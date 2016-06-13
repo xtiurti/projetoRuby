@@ -1,0 +1,28 @@
+<div class="fields">
+  <div class="field">
+    <label>Aulas Teóricas</label>
+    <%= f.text_area :theoretical_classes %>
+  </div>
+  
+  <div class="field">
+    <label>Aulas Práticas</label>
+    <%= f.text_area :practical_classes %>
+  </div>
+  
+  <div class="field">
+    <label>Atividades Práticas Supervisionadas</label>
+    <%= f.text_area :aps %>
+  </div>
+
+  <div class="field">
+    <label>Atividades à Distância</label>
+    <%= f.text_area :activies_distance %>
+  </div>
+  
+  <div class="field">
+    <label>Atividades Práticas Como Componente Curricular</label>
+    <%= f.text_area :apcc %>
+  </div>
+
+  <div><%=  link_to_remove_fields "Remover", f %></div>
+</div>
