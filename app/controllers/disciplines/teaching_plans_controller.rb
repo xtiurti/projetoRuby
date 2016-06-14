@@ -11,6 +11,7 @@ class Disciplines::TeachingPlansController < ApplicationController
 
   def new
     @teaching_plan = @discipline.teaching_plans.new
+    @teaching_plan.teaching_procedures.build
   end
 
   def create

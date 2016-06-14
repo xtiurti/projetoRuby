@@ -1,8 +1,11 @@
 <div class="ui container">
-<div class="ui positive message">
-  <i class="close icon"></i>
- <p id="notice"><%= notice %></p>
-</div>
+
+<% if flash[:notice] %> 
+  <div class="ui positive message">
+    <i class="close icon"></i>
+    <p id="notice"><%= notice %></p>
+  </div> 
+<% end %>
 
   <h2>Disciplina: <%= @discipline.name %></h2>
   <div class="content">

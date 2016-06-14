@@ -15,6 +15,7 @@
       </div>
     <% end %>
 
+
     <div class="fields">
       <div class="fourteen wide field">
         <label>Curso</label>
@@ -46,27 +47,27 @@
       </div>
       <div class="one wide field">
         <label>AT</label>
-        <%= f.text_field :at %>
+        <%= f.text_field :at, id: "at" %>
       </div>
       <div class="one wide field">
         <label>AP</label>
-        <%= f.text_field :ap %>
+        <%= f.text_field :ap, id: "ap" %>
       </div>
       <div class="one wide field">
         <label>APS</label>
-        <%= f.text_field :aps %>
+        <%= f.text_field :aps, id: "aps" %>
       </div>
       <div class="one wide field">
         <label>AD</label>
-        <%= f.text_field :ad %>
+        <%= f.text_field :ad, id: "ad" %>
       </div>
       <div class="one wide field">
         <label>APCC</label>
-        <%= f.text_field :apcc %>
+        <%= f.text_field :apcc, id: "apcc" %>
       </div>
       <div class="one wide field">
         <label>TOTAL</label>
-        <%= f.text_field :total %>
+        <%= f.text_field :total, :disabled=>true, id: "total" %>
       </div>
     </div>
     
