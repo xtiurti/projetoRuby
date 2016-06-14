@@ -1,11 +1,10 @@
 <%= form_for([@discipline, @teaching_plan], html:{class: "ui form segment"}) do |f| %>
-  <h2 class="ui dividing header">Cadastro de Plano de Ensino</h2>
+
   <ul>
   <li><%= @discipline.name %></li>
   <% @discipline.program_contents.each  do |item|%>
   <li><%= item.content %></li>
   <%end%>
-
 
   </ul>
   <% if @teaching_plan.errors.any? %>
@@ -50,15 +49,17 @@
     <%= f.text_field :guidelines%>
   </div>
 
+  <!-- Inserindo tabela programação -->
   <h2 class="ui dividing header">Programação e Conteúdos das Aulas</h2>
     <%= f.fields_for :programmings do |builder| %>
-      <%= render "programmings_fields", f: builder %>
+      <%= render "programming_fields", f: builder %>
     <% end %>
     <p><%= link_to_add_fields "Adicionar conteúdo de Aula", f, :programmings %></p>
 
+  <!-- Inserindo tabela cprocedimentos de ensino -->
   <h2 class="ui dividing header">Procedimentos de Ensino</h2>
-    <%= f.fields_for :teaching_procedures do |builder| %>
-      <%= render "teaching_procedure_fields", f: builder %>
+    <%= f.fields_for :teaching_procedures do |builder2| %>
+      <%= render "teaching_procedure_fields", f: builder2 %>
     <% end %>
     <p><%= link_to_add_fields "Adicionar procedimento de Ensino", f, :teaching_procedures %></p>
     

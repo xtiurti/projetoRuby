@@ -17,7 +17,7 @@ class Disciplines::TeachingPlansController < ApplicationController
     @teaching_plan = @discipline.teaching_plans.new(teaching_plan_params)
     respond_to do |format|
       if @teaching_plan.save
-        format.html { redirect_to discipline_teaching_plan_path(@discipline, @teaching_plan), notice: 'Plano de Ensino Criado com Sucesso!.' }
+        format.html { redirect_to discipline_teaching_plan_path(@discipline, @teaching_plan), notice: 'Plano de Ensino Criado com Sucesso!' }
         format.json { render :no_content }
         format.js 
       else
@@ -31,9 +31,25 @@ class Disciplines::TeachingPlansController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @teaching_plan.update(teaching_plan_params)
+        format.html { redirect_to discipline_teaching_plan_path(@discipline, @teaching_plan), notice: 'O plano de ensino foi atualizado com sucesso!' }
+        format.json { head :no_content }
+        format.js
+      else
+        format.html { render :edit }
+        format.json { render json: @teaching_plan.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
+    @teaching_plan.destroy
+    respond_to do |format|
+      format.html {redirect_to discipline_teaching_plans_path(@discipline)}
+      format.json { head :no_content }
+      format.js
+    end
   end
 
   private
@@ -45,7 +61,6 @@ class Disciplines::TeachingPlansController < ApplicationController
     def set_teaching_plan
       @teaching_plan = @discipline.teaching_plans.find(params[:id])
     end
-
 
     def teaching_plan_params
       params.require(:teaching_plan).permit(:teacher,:team,:semester,:evaluation,:references,:guidelines, programmings_attributes: [:id, :day_month_week, :content_classes, :number_classes, :_destroy], teaching_procedures_attributes: [:id, :theoretical_classes, :practical_classes, :aps, :activies_distance, :apcc, :_destroy])

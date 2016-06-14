@@ -1,2 +1,37 @@
-<h1>Disciplines::TeachingPlans#index</h1>
-<p>Find me in app/views/disciplines/teaching_plans/index.html.erb</p>
+<% if flash[:notice] %> 
+  <p id="notice"></p>
+<%= flash[:notice] %> </div> <% end %>
+
+<div class="ui container">
+
+<%= link_to new_discipline_teaching_plan_path, class: 'ui btn teal button' do %>
+  <h1><i class="plus icon"></i> Criar Novo Plano de ensino</h1>
+<% end %>
+
+<table class="ui celled table striped">
+  <thead>
+    <tr>
+      <th>Professor</th>
+      <th>Turma</th>
+      <th>Semestre</th>
+      <th>Métodos de Avaliação</th>
+      <th>Orientações Gerais</th>
+      <th colspan="4">Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teaching_plans.each do |teaching_plan| %>
+    <tr id="teaching_plans_<%=teaching_plan.id%>">
+      <td><%= teaching_plan.teacher %></td>
+      <td><%= teaching_plan.team %></td>
+      <td><%= teaching_plan.semester %></td>
+      <td><%= teaching_plan.evaluation %></td>
+      <td><%= teaching_plan.guidelines %></td>
+      <td><%= link_to 'Edit', edit_discipline_teaching_plan_path(@discipline, teaching_plan), class: 'ui yellow button' %></td>
+      <td><%= link_to 'Destroy', discipline_teaching_plan_path(@discipline, teaching_plan), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: 'ui red button' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
