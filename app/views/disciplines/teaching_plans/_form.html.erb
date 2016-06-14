@@ -1,71 +1,88 @@
 <%= form_for([@discipline, @teaching_plan], html:{class: "ui form segment"}) do |f| %>
+<div class="ui segment">
+  <h2 class="ui dividing header">Cadastro de Plano de Ensino</h2> 
+  <div class="actions ui right floated"> 
+    <%= f.submit "Criar Plano de Ensino", class: 'ui right floated primary button'%>
+  </div>
 
   <ul>
-  <li><%= @discipline.name %></li>
-  <% @discipline.program_contents.each  do |item|%>
-  <li><%= item.content %></li>
-  <%end%>
-
+    <li>
+      Disciplina: <%= @discipline.name %></li>
+      <% @discipline.program_contents.each  do |item|%>
+    <li>
+      <%= item.content %></li>
   </ul>
-  <% if @teaching_plan.errors.any? %>
-    <div class="ui negative message">
-      <i class="close icon"></i>
-      <div class="header"> 
-        <%= pluralize(@teaching_plan.errors.count, " - Existe erro", " - Existem Erros") %> no seu formulário:
-      </div>
-      <ul>
-        <% @teaching_plan.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="fields">
-    <div class="twelve wide field">
-      <label>Professor Responsavel</label>
-      <%= f.text_field :teacher %>
-    </div>
-    <div class="field">
-      <label>Turma</label>
-      <%= f.text_field :team %>
-    </div>
-    <div class="field">
-      <label>Semestre</label>
-      <%= f.text_field :semester %>
-    </div>
-  </div>
+<%end%>
+</div>
   
-  <div class="field">
-    <label>Procedimentos de Avaliação</label>
-    <%= f.text_area :evaluation %>
+<% if @teaching_plan.errors.any? %>
+  <div class="ui negative message">
+    <i class="close icon"></i>
+    <div class="header"> 
+      <%= pluralize(@teaching_plan.errors.count, " - Existe erro", " - Existem Erros") %> no seu formulário:
+    </div>
+    <ul>
+      <% @teaching_plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
   </div>
-  <div class="field">
-    <label>Referências</label>
-    <%= f.text_field :references %>
-  </div>
-  <div class="field">
-    <label>Orientações Gerais</label>
-    <%= f.text_field :guidelines%>
-  </div>
+<% end %>
 
-  <!-- Inserindo tabela programação -->
-  <h2 class="ui dividing header">Programação e Conteúdos das Aulas</h2>
-    <%= f.fields_for :programmings do |builder| %>
-      <%= render "programming_fields", f: builder %>
-    <% end %>
-    <p><%= link_to_add_fields "Adicionar conteúdo de Aula", f, :programmings %></p>
+<!-- Mennu de Tabs -->
+<div class="ui top attached tabular menu tabs">
+  <a class="item" data-tab="first">Dados Principais</a>
+  <a class="item" data-tab="second">Programação das Aulas</a>
+  <a class="item active" data-tab="third">Procedimento de Ensino</a>
+</div>
 
-  <!-- Inserindo tabela cprocedimentos de ensino -->
-  <h2 class="ui dividing header">Procedimentos de Ensino</h2>
-    <%= f.fields_for :teaching_procedures do |builder2| %>
-      <%= render "teaching_procedure_fields", f: builder2 %>
-    <% end %>
-    <p><%= link_to_add_fields "Adicionar procedimento de Ensino", f, :teaching_procedures %></p>
-    
-  <div class="actions">
-    <%= f.submit class: "ui primary button" %>
+<div class="ui bottom attached tab segment" data-tab="first">
+    <div class="fields">
+  <div class="twelve wide field">
+    <label>Professor Responsavel</label>
+    <%= f.text_field :teacher %>
   </div>
+  <div class="field">
+    <label>Turma</label>
+    <%= f.text_field :team %>
+  </div>
+  <div class="field">
+    <label>Semestre</label>
+    <%= f.text_field :semester %>
+  </div>
+</div>
+
+<div class="field">
+  <label>Procedimentos de Avaliação</label>
+  <%= f.text_area :evaluation %>
+</div>
+<div class="field">
+  <label>Referências</label>
+  <%= f.text_field :references %>
+</div>
+<div class="field">
+  <label>Orientações Gerais</label>
+  <%= f.text_field :guidelines%>
+</div>
+
+</div>
+
+<div class="ui bottom attached tab segment" data-tab="second">
+    <h2 class="ui dividing header">Programação e Conteúdos das Aulas</h2>
+  <%= f.fields_for :programmings do |builder| %>
+    <%= render "programmings_fields", f: builder %>
+  <% end %>
+  <p><%= link_to_add_fields "Adicionar conteúdo de Aula", f, :programmings %></p>
+</div>
+
+<div class="ui bottom attached tab segment active" data-tab="third">
+
+<h2 class="ui dividing header">Procedimentos de Ensino</h2>
+  <%= f.fields_for :teaching_procedures do |builder| %>
+    <%= render "teaching_procedure_fields", f: builder %>
+  <% end %>
+</div>
+
 <% end %>
 
 

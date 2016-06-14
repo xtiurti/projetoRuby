@@ -1,15 +1,11 @@
-<div class="ui container">  
-  <% if flash[:notice] %> 
-    <div class="ui positive message">
-      <i class="close icon"></i>
-      <p id="notice"><%=notice%></p>
-    </div>
-  <% end %>
+<div class="ui container">
 
-  <%= link_to discipline_teaching_plans_path(@discipline), class: 'item' do %>
-    <i class="file text outline icon"></i>
-      Ver Planos de Ensino
-  <% end %>
+<% if flash[:notice] %> 
+  <div class="ui positive message">
+    <i class="close icon"></i>
+    <p id="notice"><%= notice %></p>
+  </div> 
+<% end %>
 
   <h2>Disciplina: <%= @discipline.name %></h2>
   <div class="content">
