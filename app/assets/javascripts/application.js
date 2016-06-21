@@ -44,3 +44,5 @@ $(window).bind('change', "#aps #ap #apcc #at #ad", function() {
       ad = parseInt($("#ad").val() || 0);
   $("#total").val(ap+aps+apcc+at+ad);
 });
+
+
