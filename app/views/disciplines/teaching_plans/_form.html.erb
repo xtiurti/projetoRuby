@@ -9,10 +9,18 @@
     <li>
       Disciplina: <%= @discipline.name %></li>
       <% @discipline.program_contents.each  do |item|%>
-        <li><%= item.content %></li>
-      <%end%>
   </ul>
-
+<%end%>
+  <div class="fields">
+    <div class="three wide field">
+      <label>Início do semestre</label>
+      <%= f.text_field :start %>
+    </div>
+    <div class="three wide field">
+      <label>Final do semestre</label>
+      <%= f.date_field :end, class: 'ui date' %>
+    </div>
+  </div>
 </div>
   
 <% if @teaching_plan.errors.any? %>

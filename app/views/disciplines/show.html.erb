@@ -1,81 +1,95 @@
 <div class="ui container">
-
-<% if flash[:notice] %> 
-  <div class="ui positive message">
-    <i class="close icon"></i>
-    <p id="notice"><%= notice %></p>
-  </div> 
-<% end %>
-
-  <h2>Disciplina: <%= @discipline.name %></h2>
   <div class="content">
-    <table class="ui celled padded table">
-      <tbody>
-        <tr>
-          <td><div class="content">Código:</div></td>
-          <td> <%= @discipline.cod %></td>
-        </tr>
-        <tr>
-          <td><div class="content">Fundamentação Legal:</div></td>
-          <td> <%= @discipline.substantiation %></td>
-        </tr>
-        <tr>
-          <td><div class="content">Matriz:</div></td>
-          <td> <%= @discipline.matrix %></td>
-        </tr>
-        <tr>
-          <td><div class="content">Período:</div></td>
-          <td> <%= @discipline.period %></td>
-        </tr>
-        <tr>
-          <td><div class="content">Curso:</div></td>
-          <td> <%= @discipline.course %></td>
-        </tr>
-        <tr>
-          <td><div class="content">Objetivos:</div></td>
-          <td> <%= @discipline.goals %></td>
-        </tr>
-        <tr>
-          <td><div class="content">Ementa:</div></td>
-          <td> <%= @discipline.ement %></td>
-        </tr>
-        <tr>
-          <td><div class="content">AT:</div></td>
-          <td> <%= @discipline.at %></td>
-        </tr>
-        <tr>
-          <td><div class="content">AP:</div></td>
-          <td> <%= @discipline.ap %></td>
-        </tr>
-        <tr>
-          <td><div class="content">APS:</div></td>
-          <td> <%= @discipline.aps %></td>
-        </tr>
-        <tr>
-          <td><div class="content">AD:</div></td>
-          <td> <%= @discipline.ad %></td>
-        </tr>
-        <tr>
-          <td><div class="content">APCC:</div></td>
-          <td> <%= @discipline.apcc %></td>
-        </tr>
-        <tr>
-          <td><div class="content">Total:</div></td>
-          <td> <%= @discipline.total %></td>
-        </tr>
-      </tbody>
-    </table>
-    <h2 class="ui dividing header">Conteúdo Programático</h2>
-    <table class="ui celled padded table">
-      <tbody>
-        <% @discipline.program_contents.each do |program_content| %>
+  <% if flash[:notice] %> 
+    <div class="ui positive message">
+      <i class="close icon"></i>
+      <p id="notice"><%= notice %></p>
+    </div> 
+  <% end %>
+    
+  <div class="ui segment">
+      <h2 class="ui left floated header">Dados da Disciplina</h2> 
+      <div class="actions ui right floated"> 
+        <%= link_to 'Ver Planos de ensino desta disciplina', discipline_teaching_plans_path(@discipline), class: 'ui right floated primary button' %> 
+      </div>
+      <br>
+  </div>
+
+    <br>
+    
+    <div class="content">
+      <table class="ui celled padded table">
+        <tbody>
           <tr>
-            <td><%= program_content.item %></td>
-            <td><%= program_content.ement %></td>
-            <td><%= program_content.content %></td>
+            <td><div class="content">Nome da Disciplina:</div></td>
+            <td><%= @discipline.name %></td>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+          <tr>
+            <td><div class="content">Código:</div></td>
+            <td> <%= @discipline.cod %></td>
+          </tr>
+          <tr>
+            <td><div class="content">Fundamentação Legal:</div></td>
+            <td> <%= @discipline.substantiation %></td>
+          </tr>
+          <tr>
+            <td><div class="content">Matriz:</div></td>
+            <td> <%= @discipline.matrix %></td>
+          </tr>
+          <tr>
+            <td><div class="content">Período:</div></td>
+            <td> <%= @discipline.period %></td>
+          </tr>
+          <tr>
+            <td><div class="content">Curso:</div></td>
+            <td> <%= @discipline.course %></td>
+          </tr>
+          <tr>
+            <td><div class="content">Objetivos:</div></td>
+            <td> <%= @discipline.goals %></td>
+          </tr>
+          <tr>
+            <td><div class="content">Ementa:</div></td>
+            <td> <%= @discipline.ement %></td>
+          </tr>
+          <tr>
+            <td><div class="content">AT:</div></td>
+            <td> <%= @discipline.at %></td>
+          </tr>
+          <tr>
+            <td><div class="content">AP:</div></td>
+            <td> <%= @discipline.ap %></td>
+          </tr>
+          <tr>
+            <td><div class="content">APS:</div></td>
+            <td> <%= @discipline.aps %></td>
+          </tr>
+          <tr>
+            <td><div class="content">AD:</div></td>
+            <td> <%= @discipline.ad %></td>
+          </tr>
+          <tr>
+            <td><div class="content">APCC:</div></td>
+            <td> <%= @discipline.apcc %></td>
+          </tr>
+          <tr>
+            <td><div class="content">Total:</div></td>
+            <td> <%= @discipline.total %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="ui dividing header">Conteúdo Programático</h2>
+      <table class="ui celled padded table">
+        <tbody>
+          <% @discipline.program_contents.each do |program_content| %>
+            <tr>
+              <td><%= program_content.item %></td>
+              <td><%= program_content.ement %></td>
+              <td><%= program_content.content %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
