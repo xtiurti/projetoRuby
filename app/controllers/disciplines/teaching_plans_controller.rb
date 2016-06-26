@@ -1,5 +1,5 @@
 class Disciplines::TeachingPlansController < ApplicationController
-  before_action :set_discipline
+  before_action :set_discipline, only: [:show, :edit, :update, :destroy, :new]
   before_action :set_teaching_plan, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -7,6 +7,10 @@ class Disciplines::TeachingPlansController < ApplicationController
   end
 
   def show
+  end
+
+  def newDate
+    render :new
   end
 
   def new
