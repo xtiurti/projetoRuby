@@ -1,5 +1,5 @@
 current directory: /app/.bundle/gems/debug_inspector-0.0.2/ext/debug_inspector
-/usr/local/bin/ruby -r ./siteconf20160524-7-1jkwohf.rb extconf.rb
+/usr/local/bin/ruby -r ./siteconf20160411-1-10nmgo1.rb extconf.rb
 creating Makefile
 
 current directory: /app/.bundle/gems/debug_inspector-0.0.2/ext/debug_inspector
@@ -12,4 +12,4 @@ linking shared-object debug_inspector.so
 
 current directory: /app/.bundle/gems/debug_inspector-0.0.2/ext/debug_inspector
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20160524-7-16wsxyx
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20160411-1-1vjeh0y

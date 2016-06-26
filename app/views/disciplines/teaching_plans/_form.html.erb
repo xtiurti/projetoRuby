@@ -81,11 +81,11 @@
   <%= f.fields_for :programmings do |builder| %>
     <%= render "programming_fields", f: builder %>
   <% end %>
-
+<div>
   <%= link_to_add_fields "Adicionar conteúdo de Aula", f, :programmings do %>
-  <i class="plus icon"></i> Adicionar conteúdo de Aula
+    <i class="plus icon"></i> Adicionar conteúdo de Aula
   <% end %>
-
+</div>
 </div>
 
 <div class="ui bottom attached tab segment" data-tab="third">

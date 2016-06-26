@@ -14,8 +14,8 @@ Gem::Specification.new do |s|
   s.homepage = "http://jashkenas.github.com/coffee-script/".freeze
   s.licenses = ["MIT".freeze]
   s.rubyforge_project = "coffee-script-source".freeze
-  s.rubygems_version = "2.6.3".freeze
+  s.rubygems_version = "2.6.2".freeze
   s.summary = "The CoffeeScript Compiler".freeze
 
-  s.installed_by_version = "2.6.3" if s.respond_to? :installed_by_version
+  s.installed_by_version = "2.6.2" if s.respond_to? :installed_by_version
 end

@@ -1,5 +1,5 @@
 current directory: /app/.bundle/gems/therubyracer-0.12.2/ext/v8
-/usr/local/bin/ruby -r ./siteconf20160524-7-wi24dp.rb extconf.rb
+/usr/local/bin/ruby -r ./siteconf20160626-9-mzzy4.rb extconf.rb
 checking for main() in -lpthread... yes
 creating Makefile
 
@@ -12,36 +12,36 @@ make "DESTDIR=" clean
 
 current directory: /app/.bundle/gems/therubyracer-0.12.2/ext/v8
 make "DESTDIR="
+compiling context.cc
+compiling invocation.cc
+compiling message.cc
+compiling constants.cc
 compiling init.cc
-compiling function.cc
-compiling string.cc
-compiling rr.cc
-compiling gc.cc
+compiling v8.cc
 compiling constraints.cc
 compiling signature.cc
-compiling template.cc
-compiling primitive.cc
-compiling script.cc
-compiling external.cc
-compiling trycatch.cc
-compiling invocation.cc
-compiling v8.cc
-compiling message.cc
-compiling value.cc
-compiling locker.cc
+compiling string.cc
 compiling array.cc
-compiling heap.cc
+compiling backref.cc
 compiling object.cc
+compiling trycatch.cc
+compiling function.cc
+compiling accessor.cc
+compiling locker.cc
+compiling rr.cc
 compiling date.cc
-compiling context.cc
+compiling primitive.cc
+compiling gc.cc
 compiling stack.cc
 compiling exception.cc
-compiling accessor.cc
-compiling constants.cc
+compiling template.cc
+compiling value.cc
 compiling handles.cc
-compiling backref.cc
+compiling script.cc
+compiling heap.cc
+compiling external.cc
 linking shared-object v8/init.so
 
 current directory: /app/.bundle/gems/therubyracer-0.12.2/ext/v8
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 init.so ./.gem.20160524-7-10r9dy0/v8
+/usr/bin/install -c -m 0755 init.so ./.gem.20160626-9-1u30b7m/v8
