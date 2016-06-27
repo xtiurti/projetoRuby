@@ -3,6 +3,7 @@ class DisciplinesController < ApplicationController
   
   def index
     @disciplines = Discipline.all
+    @aulas = aulas_params
   end
 
   def new
@@ -57,6 +58,9 @@ class DisciplinesController < ApplicationController
       @discipline = Discipline.find(params[:id])
     end
 
+    def aulas_params
+      params.permit(:distribution)
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
 
     def discipline_params

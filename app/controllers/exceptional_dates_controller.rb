@@ -5,22 +5,7 @@ class ExceptionalDatesController < ApplicationController
     @exceptional_date = ExceptionalDate.new
     @exceptional_dates = ExceptionalDate.all
    # render :text => @exceptional_date.inspect
-    a =[]
-    b =[]
-    inicio = Date.new(2016,6,1) 
-    fim = Date.new(2016,7,1) 
-    datas = []
-
-    @exceptional_dates.each do |ex|
-      a.push ex.date_exception.to_date.to_s
-    end
     
-    (inicio..fim).each do |date| 
-      b.push date.to_date.to_s
-    end 
-
-    datas = b.to_a - a.to_a 
-    render :text =>datas.inspect
   end
 
   def new

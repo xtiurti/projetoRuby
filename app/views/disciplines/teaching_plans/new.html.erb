@@ -10,19 +10,5 @@
 </script>
 
 <br><br><br><br><br>
-
-
-<form action="/disciplines/teaching_plans/newDate" method="get" name="dados" class="ui segment" >
-  <table class="ui table" width="588" border="90" align="center" >
-    <tr>
-    	<td>
-  			<label>Username:</label> <input type="text" name="usrname" required>
-      	<td>
-        
-        <input name="Submit" type="submit"  class="formobjects" value="Enviar dados">
- 
-        <input name="Reset" type="reset" class="formobjects" value="Redefinir">
-      </td>
-    </tr>
-  </table>
-</form>  
+<%= @response.inspect %>
+<%= render 'newDate' %>

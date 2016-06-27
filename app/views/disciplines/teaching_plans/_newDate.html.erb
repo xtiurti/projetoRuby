@@ -1,0 +1,23 @@
+<div class="ui container">
+<!-- /app/views/disciplines/teaching_plans/newDate -->
+
+<%= form_for([@discipline, @teaching_plan], url: {action: "newDate"}, method: 'get', html:{class: "ui form segment"}) do |f| %>
+  <h2 class="ui dividing header">Cadastro de Periodo e Distribuição das Aulas</h2> 
+
+  <div class="fields">
+    <div class="three wide field">
+      <label>Início do semestre</label>
+      <%= f.date_field :start %>
+    </div>
+    <div class="three wide field">
+      <label>Final do semestre</label>
+      <%= f.date_field :end, class: 'ui date' %>
+    </div>
+  </div>
+
+  <div class="actions ui"> 
+    <%= f.submit "Criar Plano de Ensino", class: 'ui primary button' %>
+  </div>
+<% end %>
+</div>
+<!-- (...) -->
