@@ -65,6 +65,7 @@ class Disciplines::TeachingPlansController < ApplicationController
     #redirect_to new_discipline_teaching_plan_path(@discipline)
   end
 
+
   def new
 
     @teaching_plan = @discipline.teaching_plans.new

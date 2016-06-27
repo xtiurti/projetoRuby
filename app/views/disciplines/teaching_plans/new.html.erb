@@ -1,4 +1,4 @@
-<% if request.GET.include? "nome" %>
+<% if request.POST.include? "nome" %>
 <div class="ui container">
   <div class="content">
     <%= render 'form' %>
@@ -10,5 +10,6 @@
 </script>
 
 <br><br><br><br><br>
+
 <%= @response.inspect %>
 <%= render 'newDate' %>

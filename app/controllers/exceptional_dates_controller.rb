@@ -5,9 +5,8 @@ class ExceptionalDatesController < ApplicationController
     @exceptional_date = ExceptionalDate.new
     @exceptional_dates = ExceptionalDate.all
    # render :text => @exceptional_date.inspect
-    
   end
-
+  
   def new
     @exceptional_date = ExceptionalDate.new    
   end
