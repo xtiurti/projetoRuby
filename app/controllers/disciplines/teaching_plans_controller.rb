@@ -10,8 +10,55 @@ class Disciplines::TeachingPlansController < ApplicationController
   end
 
   def newDate
-    render :new
-  end
+    #variaveis que vão vim do formulario
+    inicio = Date.new(2016,6,1)
+    fim = Date.new(2016,7,1)
+    #aulas e seus numeros por semana
+    @aulas = Hash.new
+    @aulas['seg'] = 2
+    @aulas['ter'] = 3
+    @aulas['qua'] = 0
+    @aulas['qui'] = 0
+    @aulas['sex'] = 1
+    #hash's para usar no push
+    mondays = []
+    tuesday = []
+    wednesday = []
+    thursday = []
+    friday = []
+    @periodo = []
+    @datasEspeciais = []
+    #pegando todos os feriados
+    @feriados = ExceptionalDate.all
+    #numero final de aulas
+    @totalAulas = 0
+    
+
+    #pegar todas as datas do inicio ao fim do semestre
+    (inicio..fim).each do |date|
+      @periodo.push date.to_date
+    end
+    
+     #pegar todos os feriados do periodo
+    @feriados.each do |date|
+      @datasEspeciais.push date.date_exception.to_date
+    end
+
+    #removendo todos os feriados
+    @periodo = @periodo.to_a - @datasEspeciais.to_a
+
+    
+    #adicionando todos os dias as suas hash's
+    @periodo.each do |data|
+      mondays.push data if data.monday?
+      tuesday.push data if data.tuesday?
+      wednesday.push data if data.wednesday?
+      thursday.push data if data.thursday?
+      friday.push data if data.friday?
+    end
+render :text => mondays.inspect
+    
+end
 
   def new
     @teaching_plan = @discipline.teaching_plans.new

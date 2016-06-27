@@ -1,4 +1,4 @@
-<% if request.GET.include? "nome" %>
+<% if request.POST.include? "nome" %>
 <div class="ui container">
   <div class="content">
     <%= render 'form' %>
@@ -13,16 +13,44 @@
 
 
 <form action="/disciplines/teaching_plans/newDate" method="get" name="dados" class="ui segment" >
-  <table class="ui table" width="588" border="90" align="center" >
+  <table class="ui celled table striped" >
     <tr>
-    	<td>
-  			<label>Username:</label> <input type="text" name="usrname" required>
-      	<td>
-        
-        <input name="Submit" type="submit"  class="formobjects" value="Enviar dados">
- 
-        <input name="Reset" type="reset" class="formobjects" value="Redefinir">
-      </td>
+    <div class="fields">
+      <div class="three wide field">
+        <label>Início do semestre</label>
+        <input type="text" class="ui input" name="inicio" required>
+      </div>
+      <div class="three wide field">
+        <label>Final do semestre</label>
+        <input type="text" class="ui input" name="final" required>
+      </div>
+
+      <div class="one wide field">
+         <label>Segunda</label>
+         <input type="text" class="ui input" name="seg" required>
+      </div>
+
+      <div class="one wide field">
+         <label>Terça</label>
+         <input type="text" class="ui input" name="ter" required>
+      </div>
+
+      <div class="one wide field">
+         <label>Quarta</label>
+         <input type="text" class="ui input" name="qua" required>
+      </div>
+
+      <div class="one wide field">
+         <label>Quinta</label>
+         <input type="text" class="ui input" name="qui" required>
+      </div>
+
+      <div class="one wide field">
+         <label>Sexta</label>
+         <input type="text" class="ui input" name="sex" required>
+      </div>
+    </div>
     </tr>
-  </table>
+ <input type="submit"></input>
+</table>
 </form>  
