@@ -1,5 +1,5 @@
 class Disciplines::TeachingPlansController < ApplicationController
-  before_action :set_discipline, only: [:show, :edit, :update, :destroy, :new, :newDate]
+  before_action :set_discipline, only: [:create, :show, :edit, :update, :destroy, :new, :newDate]
   before_action :set_teaching_plan, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,16 +10,29 @@ class Disciplines::TeachingPlansController < ApplicationController
   end
 
   def newDate
+    data = params.require(:teaching_plan).permit(:start, :end)
+    inicio = data[:start].to_date
+    fim = data[:end].to_date
+    monday = params[:seg]
+    tuesday = params[:ter]
+    wednesday = params[:qua]
+    thursday = params[:qui]
+    friday = params[:sex]
+
     @teaching_plan = @discipline.teaching_plans.new(teaching_plan_params)
     @semestre = Array.new
+    @distribution = []
 
-    inicio = @teaching_plan.start
-    fim = @teaching_plan.end
 
+    days = [["monday", monday],["tuesday", tuesday] ,["wednesday", wednesday],["thursday", thursday],["friday", friday]]
+
+    days.each do |day|
+      if day[1] != "0"
+        @distribution.push day
+      end
+    end
 
     #Vira somente o que o professor definiu, adiciona na Hash
-
-    @distribution = [['thursday', 2], ['wednesday', 3]]
     @response =Hash.new
 
     @period = [] 
@@ -60,14 +73,14 @@ class Disciplines::TeachingPlansController < ApplicationController
     #   render :new
     # end
     #  render :text => @response.inspect
+    @teaching_plan.teaching_procedures.build
     render 'new'
      # Fazer 
-    #redirect_to new_discipline_teaching_plan_path(@discipline)
+    # redirect_to new_discipline_teaching_plan_path(@discipline, @distribution)
   end
 
 
   def new
-
     @teaching_plan = @discipline.teaching_plans.new
     @teaching_plan.teaching_procedures.build
   end

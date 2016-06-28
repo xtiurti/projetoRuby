@@ -1,15 +1,18 @@
-<% if request.POST.include? "nome" %>
+<% if @response  %>
 <div class="ui container">
   <div class="content">
     <%= render 'form' %>
   </div>
 </div>
-<% end %>
 <script type="text/javascript">
   $(window).load(loadTabs());
 </script>
 
-<br><br><br><br><br>
+<% else %>
+
 
 <%= @response.inspect %>
 <%= render 'newDate' %>
+
+<% end %>
+

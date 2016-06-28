@@ -1,21 +1,10 @@
 <%= form_for([@discipline, @teaching_plan], html:{class: "ui form segment"}) do |f| %>
-<div class="ui segment">
+<div>
   <h2 class="ui dividing header">Cadastro de Plano de Ensino para a disciplina de: <%= @discipline.name %></h2> 
   <div class="actions ui right floated"> 
     <%= f.submit "Criar Plano de Ensino", class: 'ui right floated primary button' %>
   </div>
 
-  <div class="fields">
-    <div class="three wide field">
-      <label>Início do semestre</label>
-      <%= f.text_field :start %>
-    </div>
-    <div class="three wide field">
-      <label>Final do semestre</label>
-      <%= f.date_field :end, class: 'ui date' %>
-    </div>
-  </div>
-</div>
   
 <% if @teaching_plan.errors.any? %>
   <div class="ui negative message">
@@ -92,5 +81,4 @@
 
 <% end %>
 
-
-
+</div>

@@ -5,19 +5,47 @@
   <h2 class="ui dividing header">Cadastro de Periodo e Distribuição das Aulas</h2> 
 
   <div class="fields">
-    <div class="three wide field">
+    <div class="five wide field">
       <label>Início do semestre</label>
-      <%= f.date_field :start %>
+      <%= f.date_field :start, :required => true %>
     </div>
-    <div class="three wide field">
+    <div class="five wide field">
       <label>Final do semestre</label>
-      <%= f.date_field :end, class: 'ui date' %>
+      <%= f.date_field :end, :required => true %>
     </div>
+      <div class="sixteen wide field">
+         <h3 class="ui dividing centered header">Número de aulas por dia</h3> 
+         <label>*Obs: Caso não tenha aula no dia preencha com 0</label>
+        <div class="fields ui segment">
+          <div class="three wide field">
+            <label> Segunda</label>
+            <input type="text" name="seg" id="seg" onkeypress="return SomenteNumero(event)" required />
+          </div>
+          <div class="three wide field">
+           <label> Terça</label>
+           <input type="text" name="ter" id="ter" onkeypress="return SomenteNumero(event)" required />
+          </div>
+          <div class="three wide field">
+            <label> Quarta</label>
+            <input type="text" name="qua" id="qua" onkeypress="return SomenteNumero(event)" required />
+          </div>
+          <div class="three wide field">
+           <label> Quinta</label>
+           <input type="text" name="qui" id="qui" onkeypress="return SomenteNumero(event)" required />
+          </div>
+          <div class="three wide field">
+           <label> Sexta</label>
+           <input type="text" name="sex" id="sex" onkeypress="return SomenteNumero(event)" required />
+          </div>
+        </div>
+      </div>
   </div>
 
-  <div class="actions ui"> 
-    <%= f.submit "Criar Plano de Ensino", class: 'ui primary button' %>
-  </div>
+
+<div class="actions ui"> 
+  <%= f.submit "Criar Plano de Ensino", class: 'ui primary button' %>
+</div>
 <% end %>
+
 </div>
 <!-- (...) -->
