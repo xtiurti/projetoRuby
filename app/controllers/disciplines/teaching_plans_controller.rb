@@ -35,7 +35,7 @@ class Disciplines::TeachingPlansController < ApplicationController
 
     # Adicionar todos os feriados definidos em formato compativel
     @feriados.each do |date| 
-        @datasEspeciais.push date.date_exception.to_date
+        @datasEspeciais.push date.date_exception
     end
 
     # Retirar todos as datas excepcionais do periodo letivo

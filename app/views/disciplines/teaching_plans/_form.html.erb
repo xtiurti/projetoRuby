@@ -4,17 +4,6 @@
   <div class="actions ui right floated"> 
     <%= f.submit "Criar Plano de Ensino", class: 'ui right floated primary button' %>
   </div>
-
-  <div class="fields">
-    <div class="three wide field">
-      <label>Início do semestre</label>
-      <%= f.text_field :start %>
-    </div>
-    <div class="three wide field">
-      <label>Final do semestre</label>
-      <%= f.date_field :end, class: 'ui date' %>
-    </div>
-  </div>
 </div>
   
 <% if @teaching_plan.errors.any? %>
@@ -72,19 +61,29 @@
 <div class="ui bottom attached tab segment" data-tab="second">  
   <h2 class="ui dividing header">Programação e Conteúdos das Aulas</h2>
   <br>
-  <%= f.fields_for :programmings do |builder| %>
-    <%= render "programming_fields", f: builder %>
-  <% end %>
-<div>
-  <%= link_to_add_fields "Adicionar conteúdo de Aula", f, :programmings do %>
-    <i class="plus icon"></i> Adicionar conteúdo de Aula
-  <% end %>
-</div>
+  
+  <% @response.each do |response| %>
+    <div class="fields">
+      <div class="two wide field">
+        <label>Dia/Mês ou Semana</label>
+        <input type="text" name="programmings[<%=response%>]" value="<%= response[0] %>"/>
+      </div>
+
+      <div class="fourteen wide field">
+        <label>Conteúdo das Aulas</label>
+        <input type="text" name="programmings[content]" value=""/>
+      </div>
+
+      <div class="one wide field">
+        <label>Aulas</label>
+        <input type="text" name="programmings[<%=response%>]" value="<%= response[1] %>"/>
+      </div>
+    </div>
+  <%end%>
 </div>
 
 <div class="ui bottom attached tab segment" data-tab="third">
-
-<h2 class="ui dividing header">Procedimentos de Ensino</h2>
+  <h2 class="ui dividing header">Procedimentos de Ensino</h2>
   <%= f.fields_for :teaching_procedures do |builder| %>
     <%= render "teaching_procedure_fields", f: builder %>
   <% end %>
