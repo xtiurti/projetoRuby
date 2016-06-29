@@ -6,7 +6,7 @@ one:
   aps: MyText
   activies_distance: MyText
   apcc: MyText
-  TeachingPlan_id: 
+  teaching_plan_id: 
 
 two:
   theoretical_classes: MyText
@@ -14,4 +14,4 @@ two:
   aps: MyText
   activies_distance: MyText
   apcc: MyText
-  TeachingPlan_id: 
+  teaching_plan_id: 

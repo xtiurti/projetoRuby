@@ -1,21 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: 
-  cod: 
+  name: joao
+  cod: cod
   period: 1
   matrix: 1
-  course: 
-  substantiation: 
-  goals: 
-  ement: 
+  course: course
+  substantiation: course
+  goals: goals
+  ement: A ementa deve ter 30 caracteres
   at: 1
   ap: 1
   aps: 1
   ad: MyString
   integer: MyString
   apcc: 1
-
+  total: 1
+ 
 two:
   name: 
   cod: 

@@ -57,29 +57,30 @@
 </div>
 
 </div>
-
 <div class="ui bottom attached tab segment" data-tab="second">  
   <h2 class="ui dividing header">Programação e Conteúdos das Aulas</h2>
+  <h3> Numero total de aulas: <%= @totalAulas %></h3>
   <br>
-  
+  <% if @response %>
   <% @response.each do |response| %>
     <div class="fields">
       <div class="two wide field">
-        <label>Dia/Mês ou Semana</label>
-        <input type="text" name="programmings[<%=response%>]" value="<%= response[0] %>"/>
+        <label>Dia da aula</label>
+        <input type="text" name="programmings[<%=response%>]" value="<%= response[0]%>" disabled />
       </div>
 
       <div class="fourteen wide field">
-        <label>Conteúdo das Aulas</label>
+        <label>Conteúdo da Aula</label>
         <input type="text" name="programmings[content]" value=""/>
       </div>
 
       <div class="one wide field">
         <label>Aulas</label>
-        <input type="text" name="programmings[<%=response%>]" value="<%= response[1] %>"/>
+        <input type="text" name="programmings[<%=response%>]" value="<%= response[1] %>" disabled/>
       </div>
     </div>
   <%end%>
+  <% end %>
 </div>
 
 <div class="ui bottom attached tab segment" data-tab="third">

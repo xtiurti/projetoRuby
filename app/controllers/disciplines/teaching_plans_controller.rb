@@ -3,7 +3,7 @@ class Disciplines::TeachingPlansController < ApplicationController
   before_action :set_teaching_plan, only: [:show, :edit, :update, :destroy]
 
   def index
-    @teaching_plans = @discipline.teaching_plans
+    @teaching_plans = @discipline.teaching_plans.all
   end
 
   def show
@@ -60,11 +60,10 @@ class Disciplines::TeachingPlansController < ApplicationController
         if date.method("#{d[0]}?").call
           num_aulas = d[1]
           @response[date] = num_aulas
+          @totalAulas += 1
         end
       end  
     end
-
-    
 
     # if (!@response.empty?) 
     #   # render :new, distribution: @response
@@ -75,7 +74,7 @@ class Disciplines::TeachingPlansController < ApplicationController
     #  render :text => @response.inspect
     @teaching_plan.teaching_procedures.build
     render 'new'
-     # Fazer 
+    #  Fazer 
     # redirect_to new_discipline_teaching_plan_path(@discipline, @distribution)
   end
 

@@ -7,7 +7,7 @@ one:
   evaluation: MyText
   references: MyText
   guidelines: MyText
-  references: 
+
 
 two:
   teacher: MyString
@@ -16,4 +16,4 @@ two:
   evaluation: MyText
   references: MyText
   guidelines: MyText
-  references: 
+
