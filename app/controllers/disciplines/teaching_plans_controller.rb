@@ -1,5 +1,5 @@
 class Disciplines::TeachingPlansController < ApplicationController
-  before_action :set_discipline, only: [:create, :show, :edit, :update, :destroy, :new, :newDate]
+  before_action :set_discipline, only: [:create, :show, :edit, :update, :destroy, :new, :newDate, :index]
   before_action :set_teaching_plan, only: [:show, :edit, :update, :destroy]
 
   def index

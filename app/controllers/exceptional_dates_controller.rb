@@ -30,6 +30,28 @@ class ExceptionalDatesController < ApplicationController
     end
   end
 
+  def update
+  respond_to do |format|
+    if @exceptional_date.update(exceptional_date_params)
+      format.html { redirect_to exceptional_date_path(@exceptional_date), notice: 'A data foi atualizada com sucesso!.' }
+      format.json { head :no_content }
+      format.js
+    else
+      format.html { render :edit }
+      format.json { render json: @exceptional_date.errors, status: :unprocessable_entity }
+    end
+  end
+  end
+
+  def destroy
+    @exceptional_date.destroy
+    respond_to do |format|
+      format.html {redirect_to exceptional_date.path}
+      format.json { head :no_content }
+      format.js
+    end
+  end  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_exceptional_date

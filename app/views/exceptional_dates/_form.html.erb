@@ -1,0 +1,19 @@
+<div class="ui container">
+  <h2>Inserir Datas Excepcionais</h2>
+
+  <%= form_for(@exceptional_date, html:{class: "ui form segment"}) do |f| %>
+    <div class="fields">
+      <div class="three wide field">
+        <label>Evento</label>
+        <%= f.text_field :event %>
+      </div>
+      <div class="three wide field">
+        <label>Data:</label>
+        <%= f.date_field :date_exception, class: 'ui date' %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit 'Gerar Data', class: 'btn ui left attached teal button'  %> 
+    </div>
+  <%end%>
+</div>
