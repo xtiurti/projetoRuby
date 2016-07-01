@@ -66,17 +66,17 @@
     <div class="fields">
       <div class="two wide field">
         <label>Dia da aula</label>
-        <input type="text" id="teaching_plan_programmings_attributes_<%=@totalAulas %>_day_month_week" name="teaching_plan[programmings_attributes][<%=key%>][day_month_week]" value="<%= key %>" />
+        <input type="text" id="teaching_plan_programmings_attributes_<%=@totalAulas %>_day_month_week" name="teaching_plan[programmings_attributes][<%=key%>][day_month_week]" value="<%= key %>" readonly/>
       </div>
 
       <div class="fourteen wide field">
         <label>Conteúdo da Aula</label>
-        <input type="text" id="teaching_plan_programmings_attributes_<%=@totalAulas %>_content_classes" name="teaching_plan[programmings_attributes][<%=key%>][content_classes]" value=""/>
+        <input type="text" id="teaching_plan_programmings_attributes_<%=@totalAulas %>_content_classes" name="teaching_plan[programmings_attributes][<%=key%>][content_classes]" value="" />
       </div>
 
       <div class="one wide field">
         <label>Aulas</label>
-        <input type="text" id="teaching_plan_programmings_attributes_<%=@totalAulas %>_number_classes" name="teaching_plan[programmings_attributes][<%=key%>][number_classes]" value="<%= response %>"/>
+        <input type="text" id="teaching_plan_programmings_attributes_<%=@totalAulas %>_number_classes" name="teaching_plan[programmings_attributes][<%=key%>][number_classes]" value="<%= response %>" readonly/>
       </div>
     </div>
   <%end%>
