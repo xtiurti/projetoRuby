@@ -6,41 +6,314 @@
     </div>
   <% end %>
 
+  <div class="header-teaching-plan">
+    <div class="ui grid">
+      <div class="three wide column"> 
+        <%= image_tag('brasao.png', size: '70x65') %>
+      </div>
+      <div class="ten wide column">
+         <div class="row">Ministério da Educação</div>
+         <div class="row title plan"><strong>UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ</strong></div>
+         <div class="row"><strong><em>Campus Guarapuava</em></strong></div>
+      </div>
+      <div class="three wide column"> 
+        <%= image_tag('logo.png', size: '140x50') %>
+      </div>
+    </div> 
+  </div>
+
+  <h2 class="ui dividing header"></h2> 
+
   <table class="ui celled table striped">
     <thead>
       <tr>
-        <th>Curso</th>
-        <th>Disciplina</th>
-        <th>Professor Responsável</th>
-        <th>Semestre</th>
-        <th>Programação das Aulas</th>
-        <th>Procedimentos de Ensino</th>
-        <th colspan="4">Options</th>
+        <div class="ui segment t">
+          <strong>PLANO DE ENSINO</strong>
+        </div>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><%= @discipline.course %></td>
-        <td><%= @discipline.name %></td>
-        <td><%= @teaching_plan.teacher %></td>
-        <td><%= @teaching_plan.semester %></td>
-        <td><% @teaching_plan.programmings.each do |programming| %>
-          <ul>
-            <li>Dia/Mês/Semana:<%= programming.day_month_week %></li>
-            <li>Conteúdo:<%= programming.content_classes %></li>
-            <li>Nº Aulas:<%= programming.number_classes %></li>
-          </ul>
-          <%end%>
-        </td>
-        <td><%@teaching_plan.teaching_procedures.each do |teaching| %>
-          <ul>
-            <li>Aulas Teóricas:<%= teaching.aps %></li>
-          </ul>
-          <%end%>
-        </td>
-        <td><%= link_to 'Edit', edit_discipline_teaching_plan_path(@discipline, @teaching_plan), class: 'ui yellow button' %></td>
-        <td><%= link_to 'Destroy', discipline_teaching_plan_path(@discipline, @teaching_plan), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red button' %>
-        </tr>
+        <td><strong>CURSO</strong></td>
+        <td><strong><%=@discipline.course %></strong></td>
+        <td><strong>MATRIZ</strong></td>
+        <td><strong><%=@discipline.matrix %></strong></td>
+      </tr>
+
+      <tr>
+        <td><strong>FUNDAMENTAÇÃO LEGAL</strong></td>
+        <td colspan="3"><strong><%=@discipline.substantiation %></strong></td>
+      </tr>
+
+      <tr>
+        <table class="ui celled structured table">
+          <thead>
+            <tr>
+              <th rowspan="2">DISCIPLINA/UNIDADE CURRICULAR</th>
+              <th rowspan="2">CÓDIGO</th>
+              <th rowspan="2">PERÍODO</th>
+              <th colspan="6">CARGA HORÁRIA</th>
+            </tr>
+            <tr>
+              <th>AT</th>
+              <th>AP</th>
+              <th>APS</th>
+              <th>AD</th>
+              <th>APCC</th>
+              <th>TOTAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%=@discipline.name %></td>
+              <td><%=@discipline.cod %></td>
+              <td><%=@discipline.period %></td>
+              <td><%=@discipline.at %></td>
+              <td><%=@discipline.ap %></td>
+              <td><%=@discipline.aps %></td>
+              <td><%=@discipline.ad %></td>
+              <td><%=@discipline.apcc %></td>
+              <td><%=@discipline.total %></td>
+            </tr>
+          </tbody>
+        </table>
+      </tr>
+
+      <tr>
+        <table class="ui celled structured table">
+          <thead>
+            <tr>
+              <th><strong>OBJETIVOS</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%=@discipline.goals %></td>
+            </tr>
+          </tbody>
+        </table>
+      </tr>
+
+      <tr>
+        <table class="ui celled structured table">
+          <thead>
+            <tr>
+              <th><strong>EMENTA</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%=@discipline.ement %></td>
+            </tr>
+          </tbody>
+        </table>
+      </tr>
+
+      <tr>
+        <table class="ui celled structured table">
+          <thead>
+            <tr>
+              <th colspan="3">CONTEÚDO PROGRAMÁTICO</th>
+            </tr>
+            <tr>
+              <th class="center aligned">ITEM</th>
+              <th class="center aligned">EMENTA</th>
+              <th class="center aligned">CONTEÚDO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @discipline.program_contents.each do |program_content| %>
+            <tr class="center aligned">
+              <td><%= program_content.item %></td>
+              <td><%= program_content.ement %></td>
+              <td><%= program_content.content %></td>
+            </tr>
+            <%end%>
+          </tbody>
+        </table>
+      </tr>
+      
+      <tr>
+        <table class="ui celled structured table">
+          <thead>
+            <tr>
+              <th class="center aligned"><strong>PROFESSOR</strong></th>
+              <th class="center aligned"><strong>TURMA</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="center aligned">
+              <td><%= @teaching_plan.teacher %></td>
+              <td><%= @teaching_plan.team %></td>
+            </tr>
+          </tbody>
+        </table>
+      </tr>
+
+      <tr>
+        <table class="ui celled structured table">
+          <thead>
+            <tr>
+              <th rowspan="2">ANO/SEMESTRE</th>
+              <th colspan="6">CARGA HORÁRIA</th>
+            </tr>
+            <tr>
+              <th>AT</th>
+              <th>AP</th>
+              <th>APS</th>
+              <th>AD</th>
+              <th>APCC</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @teaching_plan.semester %></td>
+              <td><%=@discipline.at %></td>
+              <td><%=@discipline.ap %></td>
+              <td><%=@discipline.aps %></td>
+              <td><%=@discipline.ad %></td>
+              <td><%=@discipline.apcc %></td>
+              <td><%=@discipline.total %></td>
+            </tr>
+          </tbody>
+        </table>
+      </tr>
+
+      <tr>
+        <table class="ui celled structured table">
+          <thead>
+            <tr>
+              <th colspan="7">DIAS DAS AULAS PRESENCIAIS</th>
+            </tr>
+            <tr>
+              <th>Dia da semana</th>
+              <th class="center aligned">Segunda</th>
+              <th class="center aligned">Terça</th>
+              <th class="center aligned">Quarta</th>
+              <th class="center aligned">Quinta</th>
+              <th class="center aligned">Sexta</th>
+              <th class="center aligned">Sábado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="center aligned"><%= @total_aulas  %></td>
+              <td class="center aligned"><%=@discipline.at %></td>
+              <td class="center aligned"><%=@discipline.ap %></td>
+              <td class="center aligned"><%=@discipline.aps %></td>
+              <td class="center aligned"><%=@discipline.ad %></td>
+              <td class="center aligned"><%=@discipline.apcc %></td>
+              <td class="center aligned"><%=@discipline.total %></td>
+            </tr>
+          </tbody>
+        </table>
+      </tr>
+
+      <tr>
+        <table class="ui celled structured table">
+          <thead>
+            <tr>
+              <th colspan="3">PROGRAMAÇÃO E CONTEÚDOS DAS AULAS (PREVISÃO)</th>
+            </tr>
+            <tr>
+              <th class="center aligned">Dia/Mês ou Semana</th>
+              <th class="center aligned">Conteúdo das Aulas</th>
+              <th class="center aligned">Número de Aulas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @classes.each do |programming| %>
+            <tr>
+              <td class="center aligned"><%= programming['day_month_week'] %></td>
+              <td class="center aligned"><%= programming['content_classes'] %></td>
+              <td class="center aligned"><%= programming['number_classes'] %></td>
+            </tr>
+            <%end%>
+          </tbody>
+        </table>
+      </tr>
+
+      <tr>
+        <table class="ui celled structured table">
+          <thead>
+            <tr>
+              <th class="center aligned"><strong>PROCEDIMENTOS DE ENSINO</strong></th>
+            </tr>
+          </thead>
+          <tbody> 
+            <%@teaching_plan.teaching_procedures.each do |teaching| %>
+              <tr><td> <strong>TEÓRICAS</strong></td></tr>
+              <tr><td> <%= teaching.theoretical_classes %></td></tr>
+              <tr><td> <strong>AULAS PRÁTICAS</strong></td></tr>
+              <tr><td> <%= teaching.practical_classes %></td></tr>
+              <tr><td><strong>ATIVIDADES PRÁTICAS SUPERVISIONADAS</strong></td></tr>
+              <tr><td> <%= teaching.aps %></td></tr>
+              <tr><td> <strong>ATIVIDADES A DISTÂNCIA</strong></td></tr>
+              <tr><td> <%= teaching.activies_distance %></td></tr>
+              <tr><td> <strong>ATIVIDADES PRÁTICAS COMO COMPONENTE CURRICULAR</strong></td></tr>
+              <tr><td> <%= teaching.apcc %></td></tr>
+            <%end%>
+          </tbody>
+        </table>
+      </tr>
+
+      <tr>
+        <table class="ui celled structured table">
+          <thead>
+            <tr>
+              <th>PROCEDIMENTOS DE AVALIAÇÃO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @teaching_plan.evaluation %></td>
+            </tr>
+          </tbody>
+        </table>
+      </tr>
+
+      <tr>
+        <table class="ui celled structured table">
+          <thead>
+            <tr>
+              <th>REFERÊNCIAS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @teaching_plan.references %></td>
+            </tr>
+          </tbody>
+        </table>
+      </tr>
+
+      <tr>
+        <table class="ui celled structured table">
+          <thead>
+            <tr>
+              <th>ORIENTAÇÕES GERAIS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @teaching_plan.guidelines %></td>
+            </tr>
+          </tbody>
+        </table>
+      </tr>
     </tbody>
   </table>
+
+<br><br>
+  <div class="ui two column grid">
+    <div class="column">
+      <div class="row"><hr></div>
+      <div class="row">Assinatura do Professor</div>
+    </div>
+    <div class="column">
+      <div class="row"><hr></div>
+      <div class="row">Assinatura do Coordenador do Curso</div>
+  </div>
 </div>
+
