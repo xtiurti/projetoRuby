@@ -1,3 +1,13 @@
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
+ 
 <div class="ui container">
   <h2>Inserir Datas Excepcionais</h2>
 
@@ -5,15 +15,15 @@
     <div class="fields">
       <div class="three wide field">
         <label>Evento</label>
-        <%= f.text_field :event %>
+        <%= f.text_field :event, id: 'datapicker' %>
       </div>
       <div class="three wide field">
         <label>Data:</label>
-        <%= f.date_field :date_exception, class: 'ui date' %>
+        <%= f.text_field :date_exception, class: 'ui date', id: 'datepicker'  %>
       </div>
     </div>
     <div class="actions">
-      <%= f.submit 'Gerar Data', class: 'btn ui left attached teal button'  %> 
+      <%= f.submit 'Gerar Data', class: 'btn ui left attached teal button' %> 
     </div>
   <%end%>
 </div>

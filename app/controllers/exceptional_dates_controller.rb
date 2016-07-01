@@ -45,8 +45,8 @@ class ExceptionalDatesController < ApplicationController
 
   def destroy
     @exceptional_date.destroy
-    respond_to do |format|
-      format.html {redirect_to exceptional_date.path}
+      respond_to do |format|
+      format.html {redirect_to exceptional_dates_path}
       format.json { head :no_content }
       format.js
     end

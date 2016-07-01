@@ -125,12 +125,12 @@ class Disciplines::TeachingPlansController < ApplicationController
 
   private
 
-    def set_discipline
-      @discipline = Discipline.find(params[:discipline_id])
-    end
-
     def set_teaching_plan
       @teaching_plan = @discipline.teaching_plans.find(params[:id])
+    end
+    
+    def set_discipline
+      @discipline = Discipline.find(params[:discipline_id])
     end
 
     def teaching_plan_params

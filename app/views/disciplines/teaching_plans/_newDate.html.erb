@@ -1,3 +1,15 @@
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#start, #end" ).datepicker({
+    dateFormat: "dd/mm/yy"
+});
+  });
+  </script>
+ 
 <div class="ui container">
 <!-- /app/views/disciplines/teaching_plans/newDate -->
 
@@ -7,11 +19,11 @@
   <div class="fields">
     <div class="five wide field">
       <label>Início do semestre</label>
-      <%= f.date_field :start, :required => true %>
+      <%= f.text_field :start, :required => true, id:'start' %>
     </div>
     <div class="five wide field">
       <label>Final do semestre</label>
-      <%= f.date_field :end, :required => true %>
+      <%= f.text_field :end, :required => true, id: 'end' %>
     </div>
       <div class="sixteen wide field">
          <h3 class="ui dividing centered header">Número de aulas por dia</h3> 
