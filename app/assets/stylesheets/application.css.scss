@@ -48,7 +48,27 @@
 
 .ui.container {
     padding-top: 75px;
-    padding-bottom: 75px;
+    padding-bottom: 105px;
 }
 
+.grid {
+    text-align: center;
+}
+
+.row  { 
+    height: 24px;
+}
+
+.segment.t {
+    font-size: 20px;
+    text-align: center;
+}
+
+// .header-teaching-plan{
+//     text-align: center;
+// }
+
+// .header-teaching-plan.row {
+//     height: 24px;
+// }
 @import "semantic-ui";

@@ -60,7 +60,7 @@ class Disciplines::TeachingPlansController < ApplicationController
         if date.method("#{d[0]}?").call
           num_aulas = d[1]
           @response[date] = num_aulas
-          @totalAulas += 1
+          @totalAulas += num_aulas.to_i
         end
       end  
     end
@@ -73,6 +73,7 @@ class Disciplines::TeachingPlansController < ApplicationController
     # end
     #  render :text => @response.inspect
     @teaching_plan.teaching_procedures.build
+    @teaching_plan.programmings.build
     render 'new'
     #  Fazer 
     # redirect_to new_discipline_teaching_plan_path(@discipline, @distribution)
@@ -85,17 +86,20 @@ class Disciplines::TeachingPlansController < ApplicationController
   end
 
   def create
-    @teaching_plan = @discipline.teaching_plans.new(teaching_plan_params)
-    respond_to do |format|
-      if @teaching_plan.save
-        format.html { redirect_to discipline_teaching_plan_path(@discipline, @teaching_plan), notice: 'Plano de Ensino Criado com Sucesso!' }
-        format.json { render :no_content }
-        format.js 
-      else
-        format.html { render :new }
-        format.json { render json: @teaching_plan.errors, status: :unprocessable_entity }
-      end
+    @total_aulas = 0
+    programmings = params[:teaching_plan][:programmings_attributes]
+    data, con, dae = ''
+    @classes = Array.new
+    programmings.each do |key, programming|
+      @classes.push programming
+      @total_aulas += programming['number_classes'].to_i
     end
+   
+
+    @teaching_plan = @discipline.teaching_plans.new(teaching_plan_params)
+    # render :text => programmings.inspect
+    render 'show'
+
   end
 
   def edit
