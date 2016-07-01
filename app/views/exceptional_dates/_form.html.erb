@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script>
   $(function() {
-    $( "#start, #end" ).datepicker({
+    $( "#date" ).datepicker({
     dateFormat: "dd/mm/yy"
 });
   });
@@ -17,11 +17,11 @@
     <div class="fields">
       <div class="three wide field">
         <label>Evento</label>
-        <%= f.text_field :event, id: 'datapicker' %>
+        <%= f.text_field :event %>
       </div>
       <div class="three wide field">
         <label>Data:</label>
-        <%= f.text_field :date_exception, class: 'ui date', id: 'datepicker'  %>
+        <%= f.text_field :date_exception, class: 'ui date', id: 'date'  %>
       </div>
     </div>
     <div class="actions">
