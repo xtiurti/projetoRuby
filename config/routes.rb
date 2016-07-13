@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   resources :exceptional_dates
+  get 'destroy_all', controller: 'exceptional_dates'
   
   #post '/disciplines/teaching_plans/dates' => 'disciplines/teaching_plans#index', distribution: @distribution
 end

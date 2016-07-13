@@ -1,25 +1,25 @@
 <div class="ui container">
-<div class="content">
-  <% if flash[:notice] %> 
-    <div class="ui positive message">
-      <i class="close icon"></i>
-      <p id="notice"><%= notice %></p>
-    </div> 
-  <% end %>
-</div>  
+  <div class="content">
+    <% if flash[:notice] %> 
+      <div class="ui positive message">
+        <i class="close icon"></i>
+        <p id="notice"><%= notice %></p>
+      </div> 
+    <% end %>
+  </div>
+  
   <h2 class="ui left floated header">Data Especial</h2> 
 
-
-    <div class="content">
-      <table class="ui celled padded table">
-        <tbody>
-          <tr>
-           <td><%= @exceptional_date.event %></td>
-          </tr>
-          <tr>
-           <td><%= @exceptional_date.date_exception %></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="content">
+    <table class="ui celled padded table">
+      <tbody>
+        <tr>
+         <td><%= @exceptional_date.event %></td>
+        </tr>
+        <tr>
+         <td><%= @exceptional_date.date_exception %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -4,24 +4,37 @@
     <h1><i class="plus icon"></i> Nova Data Especial</h1>
   <% end %>
 
-<table class="ui celled table striped">
-  <thead>
-    <tr>
-      <th>Evento</th>
-      <th>Dia</th>
-      <th colspan="4">Opções</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @exceptional_dates.each do |dates| %>
-    <tr id="dates_<%=dates.id%>">
-      <td><%= dates.event %></td>
-      <td><%= dates.date_exception %></td>
-      <td><%= link_to 'Show', dates, class: 'ui green button'%></td>
-      <td><%= link_to 'Edit', edit_exceptional_date_path(dates), class: 'ui yellow button' %></td>
-      <td><%= link_to 'Destroy', dates, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: 'ui red button' %></td>
-    </tr>
+  <%= link_to destroy_all_path, class: 'ui btn red button' do %>
+    <h1><i class="remove icon"></i> Remover Todas</h1>
+  <% end %>
+
+  <div class="content">
+    <% if flash[:notice] %> 
+      <div class="ui positive message">
+        <i class="close icon"></i>
+        <p id="notice"><%= notice %></p>
+      </div> 
     <% end %>
-  </tbody>
-</table>
+  </div>
+
+  <table class="ui celled table striped">
+    <thead>
+      <tr>
+        <th>Evento</th>
+        <th>Dia</th>
+        <th colspan="4">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @exceptional_dates.each do |dates| %>
+      <tr id="dates_<%=dates.id%>" class="targetDiv">
+        <td><%= dates.event %></td>
+        <td><%= dates.date_exception %></td>
+        <td><%= link_to 'Show', dates, class: 'ui green button'%></td>
+        <td><%= link_to 'Edit', edit_exceptional_date_path(dates), class: 'ui yellow button' %></td>
+        <td><%= link_to 'Destroy', dates, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: 'ui red button' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
